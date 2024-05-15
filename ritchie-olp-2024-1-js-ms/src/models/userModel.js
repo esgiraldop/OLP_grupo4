@@ -30,7 +30,7 @@ exports.delete = async (id) => {
   await pool.query(query, [id]);
 };
 
-exports.findByEmail = async (email) => {
+exports.getUserByEmail = async (email) => {
   const query = `SELECT * FROM users WHERE email = $1`;
   const { rows } = await pool.query(query, [email]);
   return rows[0];
