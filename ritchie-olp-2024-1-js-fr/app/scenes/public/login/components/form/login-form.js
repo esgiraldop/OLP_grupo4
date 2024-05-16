@@ -5,7 +5,6 @@ import style from './login-form.css';
 export async function LoginFormComponent() {
   const root = document.getElementById('root');
 
-  console.log(style);
   root.innerHTML = `
       <form id="loginForm" class="${style.form}">
         <h2>Login</h2>
@@ -16,10 +15,10 @@ export async function LoginFormComponent() {
         <button type="submit" class="${style['button-send']}">Login</button>
       </form>
     `;
-  
+
   const form = document.getElementById('loginForm');
   form.addEventListener('submit', async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // previene el comportamiento por default que es, recargar la pagina
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
