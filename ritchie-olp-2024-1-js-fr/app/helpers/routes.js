@@ -7,6 +7,7 @@ import { ForumScene } from '../scenes/private/forum';
 import { Showcases } from '../scenes/private/showcases';
 import { RegisterPage } from '../scenes/public/register';
 import { RootScene } from '../scenes/public/root/root';
+import { shopScene } from '../scenes/private/shop';
 
 
 export const routes = {
@@ -17,6 +18,7 @@ export const routes = {
         { path: '/dashboard/users', component: UserScene },
         { path: '/dashboard/forum', component: ForumScene},
         { path: '/dashboard/show-cases', component: Showcases },
+        { path: '/dashboard/shop', component: shopScene },
     ],
     public: [
         { path: '/', component: RootScene },
