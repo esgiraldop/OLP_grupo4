@@ -5,7 +5,7 @@ export function shopScene(){
     const pageContent = `
     <div class=${styles["generalContainer"]}>
         <div class=${styles["header"]}>
-                
+                hola
         </div>
         <div class=${styles["shopContent"]}>
 
