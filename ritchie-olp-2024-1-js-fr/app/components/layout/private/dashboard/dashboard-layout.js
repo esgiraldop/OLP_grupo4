@@ -19,6 +19,7 @@ export function DashboardLayout(pageContent, logic, footer, navbarData, sidebarD
     { href: '/dashboard/forum', name: 'Forum' },
     { href: '/dashboard/show-cases', name: 'Showcases' },
     { href: '/dashboard/test', name: 'test' },
+    { href: '/dashboard/shop', name: 'Shop'}
   ];
 
   navbarData = {
