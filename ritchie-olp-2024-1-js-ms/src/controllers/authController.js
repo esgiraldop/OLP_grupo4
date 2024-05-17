@@ -2,6 +2,15 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { save, findByEmail } = require('../models/userModel');
 
+exports.test = async (req, res) =>{
+  try{
+    res.send({message: "Respuesta exitosa!"})
+  }catch{
+    res.send({message: "No se pudo conectar!"})
+  }
+
+}
+
 exports.register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
