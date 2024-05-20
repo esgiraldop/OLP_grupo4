@@ -4,11 +4,10 @@ const { save, findByEmail } = require('../models/userModel');
 
 exports.test = async (req, res) =>{
   try{
-    res.send({message: "Respuesta exitosa!"})
+    res.send({message: "Respuesta exitosa!", animal: "Mojarra negra"})
   }catch{
     res.send({message: "No se pudo conectar!"})
   }
-
 }
 
 exports.register = async (req, res) => {
