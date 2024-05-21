@@ -29,14 +29,14 @@ export function languagesScene(params){
             const resp2 = await fetch(`http://localhost:3000/courses?id=${routeID}`)
 
             const langArray = await resp2.json()
-            console.log(langArray);
+
             // Inserting the languages in the html
             $langsContainer.innerHTML = `
                 ${
                     langArray.map(elem => {
                         console.log(elem)
                         return `<div>${elem.title}</div>
-                        <button id=${elem.id} class="btn-${elem.learningPathId}">Click me</button>`
+                        <button id=${elem.id} class="btn-${elem.id}">Click me</button>`
                         }
                     ).join('')
                 }
@@ -56,4 +56,3 @@ export function languagesScene(params){
     return {pageContent, logic}
 
 }
-
