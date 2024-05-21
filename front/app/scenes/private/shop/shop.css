@@ -1,0 +1,25 @@
+.generalContainer{
+    display: grid;
+    grid-template-rows: 20% 80%;
+    background-color: blueviolet;
+    .header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .moreInfo{
+            padding: 1px 25px;
+        }
+    }
+    .shopContent{
+        display: grid;
+        grid-template-columns: 60% 40%;
+        .buyContent{
+            display: grid;
+            grid-template-rows: 20% 80%;
+        }
+        .availableContent{
+            display: grid;
+            grid-template-rows: 50% 50%;
+        }
+    }
+}
