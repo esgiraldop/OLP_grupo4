@@ -18,7 +18,7 @@ export function PathScene(params) {
         const response = await fetch ('http://localhost:3000/learningPaths');
         const learningPaths = await response.json();
         console.log(learningPaths);
-        
+
         // Pinto en el DOM
         $myContent.innerHTML = `
             ${learningPaths.map(path => `
@@ -26,21 +26,25 @@ export function PathScene(params) {
                 <button class="my-click-paths" id="${path.id}">${path.id}</button>
                 <div class="${styles.title}">${path.name}</div>
                 <div>${path.description}</div>
+              
+            </div>
+            `).join('')}
+        `;
 
-                ${path.courses.map(course => `
+        /*
+        // Esto se usaba para pintar el dom antes de mover languages a otra página
+        ${path.courses.map(course => `
                 <div>
                     <p>Course ID: ${course.courseId}</p>
                     <p>Title: ${course.title}</p>
                     <p>Duration: ${course.duration}</p>
                 </div>
                 `).join('')}
-            </div>
-            `).join('')}
-        `;
+        */
 
         //Evento
         document.querySelectorAll('.my-click-paths').forEach(singleButton =>
-            singleButton.addEventListener('click', (e) => navigateTo(`/dashboard/learning-paths?id=${e.target.id}`)))
+            singleButton.addEventListener('click', (e) => navigateTo(`/dashboard/learning-paths/languages?routeID=${e.target.id}`)))
         // singleButton.addEventListener('click', (e) => console.log(e.target.id))
             
         // const myClickPaths = document.querySelectorAll('.my-click-paths');
@@ -48,12 +52,12 @@ export function PathScene(params) {
     };
     
     //Otra pagina
-    if (params.get('id')){
-        pageContent = `${helperContent}`
-        logic = () => {
-            console.log(document.getElementById('content'),"desde constent");
-        }
-    }
+    // if (params.get('id')){
+    //     pageContent = `${helperContent}`
+    //     logic = () => {
+    //         console.log(document.getElementById('content'),"desde constent");
+    //     }
+    // }
 
     // const $myTitle = document.getElementById('my-title');
     // $myTitle.addEventListener('click', (e) => {
@@ -63,6 +67,7 @@ export function PathScene(params) {
     //     console.log("Click desde $Mytitle");
     // })
     // Devuelve un objeto con el contenido de la página y la lógica
+
     return {
         pageContent,
         logic

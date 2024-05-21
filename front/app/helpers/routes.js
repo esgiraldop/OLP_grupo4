@@ -19,9 +19,9 @@ export const routes = {
         { path: '/dashboard/users', component: UserScene },
         { path: '/dashboard/forum', component: ForumScene},
         { path: '/dashboard/show-cases', component: Showcases },
-        { path: '/dashboard/languages', component: languagesScene},
         { path: '/dashboard/shop', component: shopScene },
         { path: '/dashboard/learning-paths', component: PathScene },
+        { path: '/dashboard/learning-paths/languages', component: languagesScene},
     ],
     public: [
         { path: '/', component: RootScene },
