@@ -27,7 +27,8 @@ export function languagesScene(params){
             const route = await resp.json()
             console.log("route: ", route)
             // Based on the id, query to the database the languages
-            const resp2 = await fetch(`http://localhost:3000/courses?learningPathId=${routeID}`)
+                const resp2 = await fetch(`http://localhost:3000/courses?learningPathId=${routeID}`)
+
             const langArray = await resp2.json()
             console.log("langArray: ", langArray);
             // Inserting the languages in the html

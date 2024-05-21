@@ -6,7 +6,7 @@ import styles from './learning-paths.css';
 // Define y exporta la función PathScene
 export function PathScene(params) {
 
-    const helperContent = "<div id='content'>Hola mundo</div>"
+    // const helperContent = "<div id='content'>Hola mundo</div>"
 
     // Define el contenido de la página como una cadena de texto HTML
     let pageContent = `
