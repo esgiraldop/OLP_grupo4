@@ -23,13 +23,13 @@ export function languagesScene(params){
             // Based on the id, query to the database the languages
             console.log("routeID: ", routeID)
             const resp = await fetch(`http://localhost:3000/learningPaths?id=${routeID}`)
+            console.log("resp: ", resp)
             const route = await resp.json()
             console.log("route: ", route)
             // Based on the id, query to the database the languages
-            const resp2 = await fetch(`http://localhost:3000/courses?id=${routeID}`)
-
+            const resp2 = await fetch(`http://localhost:3000/courses?learningPathId=${routeID}`)
             const langArray = await resp2.json()
-            console.log(langArray);
+            console.log("langArray: ", langArray);
             // Inserting the languages in the html
             $langsContainer.innerHTML = `
                 ${
