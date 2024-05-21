@@ -18,7 +18,9 @@ export function DashboardLayout(pageContent, logic, footer, navbarData, sidebarD
     { href: '/dashboard/products', name: 'Products' },
     { href: '/dashboard/forum', name: 'Forum' },
     { href: '/dashboard/show-cases', name: 'Showcases' },
-    { href: '/dashboard/shop', name: 'Shop'}
+    { href: '/dashboard/shop', name: 'Shop'},
+    { href: '/dashboard/learning-paths', name: 'Learning Paths'}
+
   ];
 
  // { href: '/dashboard/languages', name: 'Languages' } // This link should not be accessible from the sidebar, but from the "routes" scene

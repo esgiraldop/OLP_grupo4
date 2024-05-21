@@ -9,6 +9,7 @@ import { RegisterPage } from '../scenes/public/register';
 import { RootScene } from '../scenes/public/root/root';
 import { languagesScene } from '../scenes/private/languages'
 import { shopScene } from '../scenes/private/shop';
+import { PathScene } from '../scenes/private/learning-paths';
 
 export const routes = {
     private: [
@@ -20,6 +21,7 @@ export const routes = {
         { path: '/dashboard/show-cases', component: Showcases },
         { path: '/dashboard/languages', component: languagesScene},
         { path: '/dashboard/shop', component: shopScene },
+        { path: '/dashboard/learning-paths', component: PathScene },
     ],
     public: [
         { path: '/', component: RootScene },

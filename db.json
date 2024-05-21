@@ -1,0 +1,39 @@
+{
+    "learningPaths": [
+      {
+        "id": 1,
+        "name": "FrontEnd",
+        "description": "Ruta de aprendizaje para desarrolladores FrontEnd",
+        "courses": [
+          {
+            "courseId": 101,
+            "title": "Introducción a HTML ",
+            "duration": "10 horas"
+          },
+          {
+            "courseId": 102,
+            "title": "Introducción a CSS",
+            "duration": "10 horas"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Backend",
+        "description": "Ruta de aprendizaje para desarrolladores Backend",
+        "courses": [
+          {
+            "courseId": 201,
+            "title": "Introducción a JavaScript",
+            "duration": "15 horas"
+          },
+          {
+            "courseId": 202,
+            "title": "Node.js Básico",
+            "duration": "12 horas"
+          }
+        ]
+      }
+    ]
+  }
+  
