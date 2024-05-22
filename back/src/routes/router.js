@@ -1,13 +1,14 @@
 const express = require('express')
 const authRoutes = require('./public/authRoutes');
-const userRoutes = require('./private/userRoutes');
-const generalRoutes = require('./private/generalRoutes');
+const privateRoutes = require('./private/router');
 const authMiddleware = require('../middlewares/authMiddleware')
 
 const router = express.Router();
 
+//Public routes
 router.use('/auth', authRoutes);
-router.use('/users', userRoutes);
-router.use('/general', authMiddleware, generalRoutes)
+
+//Private routes (Activate middleware)
+router.use('/priv', privateRoutes);
 
 module.exports = router;
