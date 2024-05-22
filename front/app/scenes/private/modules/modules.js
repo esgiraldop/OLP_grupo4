@@ -9,11 +9,13 @@ export function modulesScene(params){
         const courseId = params.get('courseId')
         console.log("courseID:", courseId);
         pageContent = `
-        <h2 class="titulo">Bienvenido! Estos son los módulos que puedes estudiar</h2>
-        <p>Haz click en cualquiera de ellos para ir a los desafíos</p>
-        <div id="mods-container">
-        <!-- I should insert the modules cards here -->
-        </div>
+        <main class=${styles['main']}>
+            <h2 class=${styles['title']}>Bienvenido! Estos son los módulos que puedes estudiar</h2>
+            <p>Haz click en cualquiera de ellos para ir a los desafíos</p>
+            <div id="mods-container" class=${styles['mods-container']}>
+            <!-- I should insert the modules cards here -->
+            </div>
+        </main>
         `
 
         logic = async () =>{
@@ -24,8 +26,10 @@ export function modulesScene(params){
             $modsContainer.innerHTML = `
                 ${
                     modArray.map(elem => {
-                        return `<div>${elem.name}</div>
-                        <button id=${elem.id} class="btn-course">Ir al curso</button>`
+                        return `<section class=${styles['mod-card']}>
+                                    <div>${elem.name} </div>
+                                    <button id=${elem.id} class=${styles['btn-course']} type="button">Ir al curso</button>
+                                </section>`
                         }
                     ).join('')
                 }
