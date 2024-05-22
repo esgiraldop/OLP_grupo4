@@ -1,6 +1,6 @@
 .generalContainer{
     display: grid;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 10vh 70vh;
     background-color: blueviolet;
     .header{
         display: flex;
@@ -12,14 +12,30 @@
     }
     .shopContent{
         display: grid;
-        grid-template-columns: 60% 40%;
+        grid-template-columns: repeat(2, 1fr);
         .buyContent{
             display: grid;
-            grid-template-rows: 20% 80%;
+            grid-template-rows: 10vh 60vh;
+            width: 50vw;
+            .shopNav{
+                display: flex;
+                justify-content: space-around;
+                button{
+                    padding: 1px 25px;
+                    margin: 20px 0;
+                    border-radius: 10px;
+                }
+            }
+            .buyAvatar{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-template-rows: repeat(3,1fr);
+            }
         }
         .availableContent{
             display: grid;
-            grid-template-rows: 50% 50%;
+            grid-template-rows: 35vh 35vh;
+            width: 35vw; 
         }
     }
 }
