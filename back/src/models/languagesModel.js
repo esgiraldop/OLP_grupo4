@@ -10,7 +10,7 @@ exports.getByRouteId = async (id) => {
     // For searching lenaguages with an associated route id
     const query = `SELECT * FROM Languages WHERE id_route = $1`
     const {rows} = await pool.query(query, [id])
-    return rows[0]
+    return rows
 }
 
 exports.addLanguage = async (name, description, id_route) => {
