@@ -10,14 +10,29 @@ export function shopScene(){
                     X-Coins shop
                 </h2>
             </div>
-            <button class${styles["moreInfo"]}>
+            <button class=${styles["moreInfo"]}>
                 More info.
             </button>
         </div>
         <div class=${styles["shopContent"]}>
             <div class=${styles["buyContent"]}>
-                <div class=${styles["shopNav"]}></div>
-                <div class=${styles["buyAvatar"]}></div>
+                <div class=${styles["shopNav"]}>
+                    <button>Cabeza</button>
+                    <button>Torso</button>
+                    <button>Pantalones</button>
+                    <button>Zapatos</button>
+                </div>
+                <div class=${styles["buyAvatar"]}>
+                    <img>
+                    <img>
+                    <img>
+                    <img>
+                    <img>
+                    <img>
+                    <img>
+                    <img>
+                    <img>
+                </div>
             </div>
             <div class=${styles["availableContent"]}>
                 <div class=${styles["userAvatar"]}></div>
