@@ -7,9 +7,10 @@ import { ForumScene } from '../scenes/private/forum';
 import { Showcases } from '../scenes/private/showcases';
 import { RegisterPage } from '../scenes/public/register';
 import { RootScene } from '../scenes/public/root/root';
-import { languagesScene } from '../scenes/private/languages'
+import { languagesScene } from '../scenes/private/languages';
 import { shopScene } from '../scenes/private/shop';
 import { PathScene } from '../scenes/private/learning-paths';
+import { modulesScene } from '../scenes/private/modules';
 
 export const routes = {
     private: [
@@ -22,6 +23,7 @@ export const routes = {
         { path: '/dashboard/shop', component: shopScene },
         { path: '/dashboard/learning-paths', component: PathScene },
         { path: '/dashboard/learning-paths/languages', component: languagesScene},
+        { path: '/dashboard/learning-paths/languages/modules', component: modulesScene},
     ],
     public: [
         { path: '/', component: RootScene },

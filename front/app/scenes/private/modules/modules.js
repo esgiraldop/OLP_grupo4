@@ -5,9 +5,9 @@ export function modulesScene(params){
     let pageContent = ``
     let logic = async () =>{}
 
-    if (params.get('routeID')){
-        const routeID = params.get('routeID')
-
+    if (params.get('courseId')){
+        const courseId = params.get('courseId')
+        console.log("courseID:", courseId);
         pageContent = `
         <h2 class="titulo">Bienvenido! Estos son los módulos que puedes estudiar</h2>
         <p>Haz click en cualquiera de ellos para ir a los desafíos</p>
@@ -18,14 +18,14 @@ export function modulesScene(params){
 
         logic = async () =>{
             const $modsContainer = document.getElementById("mods-container")
-            const resp = await fetch(`http://localhost:3000/modules?id=${routeID}`)
+            const resp = await fetch(`http://localhost:3000/modules?courseId=${courseId}`)
             const modArray = await resp.json()
 
             $modsContainer.innerHTML = `
                 ${
                     modArray.map(elem => {
-                        return `<div>${elem.title}</div>
-                        <button id=${elem.id} class="btn-${elem.id}">Click me</button>`
+                        return `<div>${elem.name}</div>
+                        <button id=${elem.id} class="btn-course">Ir al curso</button>`
                         }
                     ).join('')
                 }
@@ -35,7 +35,8 @@ export function modulesScene(params){
             const bttnsArray = [...bttns]
             bttnsArray.forEach(
                 $elem => $elem.addEventListener('click', () => {
-                    navigateTo(`/dashboard/learning-paths/languages/modules/challenges?routeID=${$elem.id}`)
+                    alert("ir al curso")
+                    //navigateTo(`/dashboard/learning-paths/languages/modules/challenges?routeID=${$elem.id}`)
                 })
             )
         }

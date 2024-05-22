@@ -35,20 +35,23 @@ export function languagesScene(params){
             $langsContainer.innerHTML = `
                 ${
                     langArray.map(elem => {
-                        console.log(elem)
+                        console.log("elemnet:",elem)
                         return `<div>${elem.title}</div>
-                        <button id=${elem.id} class="btn-${elem.learningPathId}">Click me</button>`
+                        <button id=${elem.courseId} type="button" class="btn-module">Ir a Retos</button>`
                         }
                     ).join('')
                 }
             `
 
             //Adding an event listener to evey language
-            const bttns  = document.getElementsByTagName('button')
+            const bttns  = document.getElementsByClassName('btn-module')
+            console.log("BTTNS:",bttns);
             const bttnsArray = [...bttns]
+            console.log("bttnsarray:",bttnsArray);
             bttnsArray.forEach(
                 $elem => $elem.addEventListener('click', () => {
-                    alert(`You clicked the language ${$elem.title}`)
+                    console.log($elem.id);
+                    navigateTo(`/dashboard/learning-paths/languages/modules?courseId=${$elem.id}`)
                 })
             )
         }
