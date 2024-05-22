@@ -34,9 +34,9 @@ export function modulesScene(params){
             const bttns  = document.getElementsByTagName('button')
             const bttnsArray = [...bttns]
             bttnsArray.forEach(
-                $elem => $elem.addEventListener('click', () => {
-                    alert("ir al curso")
-                    //navigateTo(`/dashboard/learning-paths/languages/modules/challenges?routeID=${$elem.id}`)
+                $elem => $elem.addEventListener('click', (e) => {
+                    navigateTo(`/dashboard/learning-paths/languages/modules/challenges?id=${$elem.id}`)
+                    console.log($elem.id)
                 })
             )
         }
