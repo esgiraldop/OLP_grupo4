@@ -1,8 +1,14 @@
 // import imagen from '../../../assets'
 import style from "./style.css"
 
-export function practiceScene(){
-    const pageContent = 
+export function challengeScene(params){
+   let logic = async()=>{}
+    let pageContent = ``
+    if (params.get('id')){
+        const id = params.get('id')
+        console.log('id', id);
+    
+    pageContent =
 `<div id="1" class = ${style["contenedor-global"]}>
     <div class="${style['bg']}"></div>
     <div class="${style['star-field']}">
@@ -11,9 +17,8 @@ export function practiceScene(){
         <div class="${style['layer']}"></div>
         <div class="${style['container']}">
             <div class="${style['card']}">
-                <div id="2" class="${style['button']}">
-                    <p>Ocultar vista</p>
-                </div>
+                    
+               
                 <p class="${style['heading']}">
                     Reto semanal
                 </p>
@@ -25,6 +30,7 @@ export function practiceScene(){
                 </p>
             </div>
             <div class="${style['card']}">
+                
                 <p class="${style['heading']}">
                     Reto mensual
                 </p>
@@ -36,6 +42,7 @@ export function practiceScene(){
                 </p>
             </div>
             <div class="${style['card']}">
+              
                 <p class="${style['heading']}">
                     Reto definitivo
                 </p>
@@ -54,15 +61,15 @@ export function practiceScene(){
   
 
 
-let logic = ()=>{
-    const botonOcultar = document.getElementById("2")
-    botonOcultar.addEventListener("click", (e)=>{
-    const ocultar = document.getElementById("1")
-    ocultar.classList.add(style.hidden)
-    })
+    logic = async ()=>{
+    const respns = await fetch(`http://localhost:3000/challenges?id=${id}`)
     
+    const challengeArray = await respns.json()
+    console.log(challengeArray)
+
+
 
     
-}
+}}
 return{pageContent,logic}
 }
