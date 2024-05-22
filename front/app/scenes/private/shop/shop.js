@@ -1,3 +1,4 @@
+
 import styles from './shop.css';
 
 export function shopScene(){
@@ -23,20 +24,47 @@ export function shopScene(){
                     <button>Zapatos</button>
                 </div>
                 <div class=${styles["buyAvatar"]}>
-                    <img>
-                    <img>
-                    <img>
-                    <img>
-                    <img>
-                    <img>
-                    <img>
-                    <img>
-                    <img>
+                    <div>
+                        <img></img>
+                        img1 spot
+                    </div>
+                    <div>
+                        <img>
+                        img2 spot
+                    </div>
+                    <div>
+                        <img>
+                        img3 spot
+                    </div>
+                    <div>
+                        <img>
+                        img4 spot
+                    </div>
+                    <div>
+                        <img>
+                        img5 spot
+                    </div>
+                    <div>
+                        <img>
+                        img6 spot
+                    </div>
+                    <div>
+                        <img>
+                        img7 spot
+                    </div>
+                    <div>
+                        <img>
+                        img8 spot
+                    </div>
+                    <div>
+                        <img>
+                        img9 spot
+                    </div>
                 </div>
             </div>
             <div class=${styles["availableContent"]}>
-                <div class=${styles["userAvatar"]}></div>
-                <div class=${styles["availableSide"]}></div>
+                <div class=${styles["userAvatar"]}>Here comes your avatar</div>
+                <div class=${styles["availableSide"]}>Here comes the available avatar</div>
             </div>       
         </div>
     </div>
