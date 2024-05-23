@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { save, findByEmail } = require('../models/userModel');
+const { save, findByEmail, createUser } = require('../models/userModel');
 
 exports.test = async (req, res) =>{
   try{
