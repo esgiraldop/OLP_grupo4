@@ -5,6 +5,7 @@ const forumRoutes = require('./forumRoutes');
 const generalRoutes = require('./generalRoutes')
 const languagesRoutes = require('./languagesRoutes')
 const routesRoutes = require('./routesRoutes')
+const modulesRoutes = require('./modulesRoutes')
 
 const router = express.Router();
 
@@ -24,5 +25,7 @@ router.use('/general', generalRoutes)
 router.use('/languages', languagesRoutes)
 
 router.use('/routes', routesRoutes)
+router.use('/modules', modulesRoutes)
+router
 
 module.exports = router;

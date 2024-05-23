@@ -1,14 +1,14 @@
 const {pool} = require('../config/database')
 
 exports.getAll = async () => {
-    const query = `SELECT * FROM Languages`
+    const query = `SELECT * FROM languages`
     const {rows} = await pool.query(query)
     return rows
 }
 
 exports.getByRouteId = async (id) => {
     // For searching lenaguages with an associated route id
-    const query = `SELECT * FROM Languages WHERE id_route = $1`
+    const query = `SELECT * FROM languages WHERE id_route = $1`
     const {rows} = await pool.query(query, [id])
     return rows
 }
