@@ -26,10 +26,11 @@ export async function LoginFormComponent() {
       alert('Please fill in all fields');
       return;
     }
-    const token = await login(email, password);
+    const {token, userId} = await login(email, password);
     if (token) {
       localStorage.setItem('token', token);
-      navigateTo('/dashboard');
+      localStorage.setItem('userId', userId)
+      navigateTo('/dashboard?');
     } else {
       alert('Invalid credentials');
     }
@@ -52,7 +53,7 @@ async function login(email, password) {
     }
 
     const data = await response.json();
-    return data.token;
+    return {token: data.token, userId: data.user.id};
   } catch (error) {
     console.error('Login failed:', error);
     return null;
