@@ -1,24 +1,29 @@
 import { navigateTo } from '../../../../../Router.js';
 import { formValidator } from '../../../../../helpers';
-import style from './login-form.css';
+import galaxia from  '../../../../../assets/fondo-galaxia.jpg';
+import styles from './login-form.css';
 
 export async function LoginFormComponent() {
-  const root = document.getElementById('root');
+  const $root = document.getElementById('root');
 
-  root.innerHTML = `
-      <form id="loginForm" class="${style.form}">
-        <h2>Login</h2>
-        <label for="email" class="${style.label}">Email:</label>
-        <input type="text" id="email" name="email" autocomplete="email" class="${style['input-email']}">
-        <label for="password" class="${style.label}">Password:</label>
-        <input type="password" id="password" name="password" autocomplete="current-password" class="${style['input-password']}">
-        <button type="submit" class="${style['button-send']}">Login</button>
-      </form>
+  $root.innerHTML = `
+  <main class=${styles.loginPage} style="background-image: url(${galaxia})">
+  <form class=${styles.form_login} id="loginForm">
+      <h4>Login</h4>
+      <input class=${styles.controls} type="email" id="email" placeholder="correo" required>
+      <input class=${styles.controls} type="password" id="password" placeholder="contraseña" required>
+      <input type="submit" value="Login" class=${styles.button}>
+      <div class=${styles.register_link}>
+          <p>¿No tienes una cuenta?    <a href="./register">Registrame</a></p>
+      </div>
+  </form>
+</main>
     `;
 
-  const form = document.getElementById('loginForm');
-  form.addEventListener('submit', async (event) => {
+  const $form = document.getElementById('loginForm');
+  $form.addEventListener('submit', async (event) => {
     event.preventDefault(); // previene el comportamiento por default que es, recargar la pagina
+
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 

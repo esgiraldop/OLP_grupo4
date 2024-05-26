@@ -13,6 +13,7 @@ export function UserScene(params) {
     let logic = async () => {
         const resp = await fetch('https://jsonplaceholder.typicode.com/users');
         const users = await resp.json();
+        console.log(users);
         const userInfo = document.getElementById('user-info');
         userInfo.innerHTML = `
         <table class="${styles['user-table']}">

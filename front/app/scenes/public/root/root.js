@@ -15,6 +15,7 @@ export function RootScene () {
                     <li><a href="/login">Servicios</a></li>
                     <li><a href="/register">Nosotros</a></li>
                     <li><a href="/register">Contacto</a></li>
+                    <li><a href="/register">Sign Up</a></li>
                     <li><button id="btn-login">login</button></li>
                 </ul>
             </nav>
