@@ -13,12 +13,12 @@ exports.getById = async (id) => {
     return rows[0]
 }
 
-exports.addRoute = async (name, description) => {
-    const query = `INSERT INTO routes (name, description)
-    VALUES ($1, $2)
-    RETURNING id, name, description
+exports.addRoute = async (name, description, content) => {
+    const query = `INSERT INTO routes (name, description, content)
+    VALUES ($1, $2, $3)
+    RETURNING id, name, description, content
     `
-    const values = [name, description]
+    const values = [name, description, content]
     const {rows} = await pool.query(query, values)
     return rows[0]
 }

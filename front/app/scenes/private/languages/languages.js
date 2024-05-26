@@ -17,13 +17,14 @@ export function languagesScene(params){
         logic = async () =>{
             const $langsContainer = document.getElementById("langs-container")
             // const resp = await fetch(`http://localhost:3000/learningPaths?id=${routeID}`)
-            const resp = await fetch(`http://localhost:4000/api/priv/routes?id=${routeID}`)
-            const route = await resp.json()
+            // const resp = await fetch(`http://localhost:4000/api/priv/routes?id=${routeID}`)
+            // const route = await resp.json()
             // Based on the id, query to the database the languages
                 // const resp2 = await fetch(`http://localhost:3000/courses?learningPathId=${routeID}`)
-                const resp2 = await fetch(`http://localhost:4000/api/priv/languages/${routeID}`)
+            const resp2 = await fetch(`http://localhost:4000/api/priv/languages/${routeID}`)
 
             const langArray = await resp2.json()
+            console.log(langArray);
 
             //Pinto en el DOM
             $langsContainer.innerHTML = `
