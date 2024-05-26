@@ -5,42 +5,38 @@ export function modulesScene(params){
     let pageContent = ``
     let logic = async () =>{}
 
-    if (params.get('courseId')){
-        const courseId = params.get('courseId')
-        console.log("courseID:", courseId);
+    if (params.get('langID')){
+        const langID = params.get('langID')
         pageContent = `
-        <main class=${styles['main']}>
+        <div class=${styles['container']}>
             <h2 class=${styles['title']}>Bienvenido! Estos son los módulos que puedes estudiar</h2>
-            <p>Haz click en cualquiera de ellos para ir a los desafíos</p>
             <div id="mods-container" class=${styles['mods-container']}>
-            <!-- I should insert the modules cards here -->
             </div>
-        </main>
+        </div>
         `
 
         logic = async () =>{
             const $modsContainer = document.getElementById("mods-container")
-            const resp = await fetch(`http://localhost:3000/modules?courseId=${courseId}`)
+            // const resp = await fetch(`http://localhost:3000/modules?courseId=${courseId}`)
+            const resp = await fetch(`http://localhost:4000/api/priv/modules/${langID}`)
             const modArray = await resp.json()
+            console.log(modArray);
 
             $modsContainer.innerHTML = `
-                ${
-                    modArray.map(elem => {
-                        return `<section class=${styles['mod-card']}>
-                                    <div>${elem.name} </div>
-                                    <button id=${elem.id} class=${styles['btn-course']} type="button">Ir al curso</button>
-                                </section>`
-                        }
-                    ).join('')
+            <button class="${styles['btn-new-module']}" id="createchalg">Create new module</button>
+            <button class="${styles['btn-edit-module']}" id="createchalg">Edit modules</button>
+                ${modArray.map(elem => {
+                        return `
+                        <button id=${elem.id} class=${styles['btn-challenge']} type="button">Go to challenges</button>
+                        `
+                        }).join('')
                 }
             `
-
-            const bttns  = document.getElementsByTagName('button')
-            const bttnsArray = [...bttns]
-            bttnsArray.forEach(
-                $elem => $elem.addEventListener('click', (e) => {
-                    navigateTo(`/dashboard/learning-paths/languages/modules/challenges?id=${$elem.id}`)
-                    console.log($elem.id)
+            const buttons  = document.getElementsByTagName('button')
+            const buttonsArray = [...buttons]
+            buttonsArray.forEach(
+                $elem => $elem.addEventListener('click', () => {
+                    navigateTo(`/dashboard/learning-paths/languages/modules/challenges?modID=${$elem.id}`)
                 })
             )
         }

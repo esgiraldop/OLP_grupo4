@@ -115,3 +115,7 @@ img {
 .loader {
     color: yellow;
 }
+
+button{
+    cursor: pointer;
+}

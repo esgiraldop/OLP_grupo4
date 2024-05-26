@@ -10,15 +10,15 @@
     {"courseId": 202, "title": "Node.js", "duration": "12 horas", "learningPathId": 2}
   ],
   "modules": [
-    {"id": 1, "name": "Estructura básica de un documento HTML", "content": "Este es el contenido del módulo HTML", "languageID": 1, "courseId": 101},
+    {"id": 1, "name": "Introduccion a HTML", "content": "Este es el contenido del módulo HTML", "languageID": 1, "courseId": 101},
     {"id": 2, "name": "Etiquetas y elementos HTML", "content": "Este es el contenido del módulo HTML", "languageID": 1, "courseId": 101},
-    {"id": 3, "name": "Atributos HTML", "content": "Este es el contenido del módulo HTML", "languageID": 1, "courseId": 101},
-    {"id": 4, "name": "Selectores y propiedades CSS", "content": "Este es el contenido del módulo CSS", "languageID": 1, "courseId": 102},
+    {"id": 3, "name": "Estructura básica de un documento HTML", "content": "Este es el contenido del módulo HTML", "languageID": 1, "courseId": 101},
+    {"id": 4, "name": "Introduccion a CSS", "content": "Este es el contenido del módulo CSS", "languageID": 1, "courseId": 102},
     {"id": 5, "name": "Modelo de caja CSS (Box Model)", "content": "Este es el contenido del módulo CSS", "languageID": 1, "courseId": 102},
-    {"id": 6, "name": "Posicionamiento y diseño CSS", "content": "Este es el contenido del módulo CSS", "languageID": 1, "courseId": 102},
-    {"id": 7, "name": "Sintaxis y tipos de datos en JavaScript", "content": "Este es el contenido del módulo JavaScript", "languageID": 2, "courseId": 201},
-    {"id": 8, "name": "Funciones y objetos en JavaScript", "content": "Este es el contenido del módulo JavaScript", "languageID": 2, "courseId": 201},
-    {"id": 9, "name": "Manejo de eventos en JavaScript", "content": "Este es el contenido del módulo JavaScript", "languageID": 2, "courseId": 201},
+    {"id": 6, "name": "Selectores y propiedades CSS", "content": "Este es el contenido del módulo CSS", "languageID": 1, "courseId": 102},
+    {"id": 7, "name": "Introduccion ad Javascript", "content": "Este es el contenido del módulo JavaScript", "languageID": 2, "courseId": 201},
+    {"id": 8, "name": "Sintaxis y tipos de datos en JavaScript", "content": "Este es el contenido del módulo JavaScript", "languageID": 2, "courseId": 201},
+    {"id": 9, "name": "Funciones y objetos en JavaScript", "content": "Este es el contenido del módulo JavaScript", "languageID": 2, "courseId": 201},
     {"id": 10, "name": "Introducción a Node.js", "content": "Este es el contenido del módulo Node.js", "languageID": 2, "courseId": 202},
     {"id": 11, "name": "Manejo de archivos en Node.js", "content": "Este es el contenido del módulo Node.js", "languageID": 2, "courseId": 202},
     {"id": 12, "name": "Módulos y paquetes en Node.js", "content": "Este es el contenido del módulo Node.js", "languageID": 2, "courseId": 202}

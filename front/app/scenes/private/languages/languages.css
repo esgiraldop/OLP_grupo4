@@ -1,0 +1,78 @@
+.container{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(85, 92, 132, 0.342) 50%,
+      rgba(18, 18, 18, 0.274) 100%
+    ), url(https://cdn.pixabay.com/photo/2016/09/29/13/08/planet-1702788_1280.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img{
+    cursor: pointer;
+    height: 20vh;
+    width: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+
+.btn-new-path{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: auto;
+    padding: 10px 10px;
+    margin: 0 auto;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+} 
+  .btn-new-path:hover::before, .btn-new-path:hover::after {
+    transform: scale(0)
+  }
+  
+  .btn-new-path:hover {
+    box-shadow: inset 0px 0px 100px #1479EA;
+  }
+
+  .btn-edit-path{
+    position: absolute;
+    bottom: 20px;
+    right: 230px;
+    width: auto;
+    padding: 10px 10px;
+    margin: 0 auto;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+} 
+  .btn-edit-path:hover::before, .btn-edit-path:hover::after {
+    transform: scale(0)
+  }
+  
+  .btn-edit-path:hover {
+    box-shadow: inset 0px 0px 100px #1479EA;
+  }

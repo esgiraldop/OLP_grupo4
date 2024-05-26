@@ -11,7 +11,7 @@ import { languagesScene } from '../scenes/private/languages';
 import { shopScene } from '../scenes/private/shop';
 import { PathScene } from '../scenes/private/learning-paths';
 import { modulesScene } from '../scenes/private/modules';
-import { challengeScene } from '../scenes/private/challenges_carlos';
+import { challengesScene } from '../scenes/private/challenges';
 import { GameScene } from '../scenes/private/games/games';
 import { ProfileScene } from '../scenes/private/profile/profile';
 import { PostScene } from '../scenes/private/posts/posts';
@@ -30,7 +30,7 @@ export const routes = {
         { path: '/dashboard/learning-paths', component: PathScene },
         { path: '/dashboard/learning-paths/languages', component: languagesScene},
         { path: '/dashboard/learning-paths/languages/modules', component: modulesScene},
-        { path: '/dashboard/learning-paths/languages/modules/challenges',component: challengeScene },
+        { path: '/dashboard/learning-paths/languages/modules/challenges',component: challengesScene },
         { path: '/dashboard/games', component: GameScene },
         { path: '/dashboard/profile', component: ProfileScene },
         { path: '/dashboard/posts', component: PostScene },
