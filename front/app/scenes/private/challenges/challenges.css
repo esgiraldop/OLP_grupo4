@@ -1,0 +1,73 @@
+.container {
+    height: 100%;
+    width: 100%;
+    color: white;
+    background:linear-gradient(
+      90deg,
+      rgba(80, 77, 77, 0.342) 50%,
+      rgba(28, 27, 27, 0.274) 100%
+    ), url(https://cdn.pixabay.com/photo/2024/04/09/02/22/ai-generated-8684845_1280.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.title{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-new-chalg{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: auto;
+    padding: 10px 10px;
+    margin: 0 auto;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+} 
+  .btn-new-chalg:hover::before, .btn-new-chalg:hover::after {
+    transform: scale(0)
+  }
+  
+  .btn-new-chalg:hover {
+    box-shadow: inset 0px 0px 100px #1479EA;
+  }
+
+  .btn-edit-chalg{
+    position: absolute;
+    bottom: 20px;
+    right: 230px;
+    width: auto;
+    padding: 10px 10px;
+    margin: 0 auto;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+} 
+  .btn-edit-chalg:hover::before, .btn-edit-chalg:hover::after {
+    transform: scale(0)
+  }
+  
+  .btn-edit-chalg:hover {
+    box-shadow: inset 0px 0px 100px #1479EA;
+  }

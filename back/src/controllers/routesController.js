@@ -20,19 +20,19 @@ exports.getById = async (req, res) => {
     res.status(200).json(route)
   } catch (err){
     console.log("Error en getById")
-    res.status(500).json({message: "Error en el servidor"})
+    res.status(500).json({message: "Error en el servidor", err})
   }
 }
 
 exports.addRoute = async (req, res) => {
   try{
-    const { name, description, id_route } = req.body;
-    route = await addRoute(name, description, id_route)
+    const { name, description, content } = req.body;
+    route = await addRoute(name, description, content)
     if(!route){
       return res.status(404).json({message: "Error when creating the route"})
     }
     res.status(201).json({message: "Route created successfully", route})
-  }catch{
+  }catch(err){
     console.log("Error when registering route: ", err)
     res.status(500).json({message: "Error in the server"})
   }
