@@ -27,7 +27,7 @@ export function challengesScene(params) {
             <div class="${styles["btn-container"]}">
                 ${chalArray.map(elem => {
                 return `
-                        <button id=${elem.id} class=${styles['btn-challenge']} type="button">Go to your challenge </button>
+                        <button id=${elem.id} class=${styles['btn-challenge']} type="button"></button>
                         `
             }).join('')
                 }
