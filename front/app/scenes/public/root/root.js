@@ -76,7 +76,7 @@ export function RootScene () {
                   </button>
                    </li>
                     <li>  <button class=${styles["btn"]} type=${styles["button"]} id="btn-login">
-                    <strong><a href="/register">Login</a></strong>
+                    <strong><a href="/login">Login</a></strong>
                     <div id=${styles["container-stars"]}>
                       <div id=${styles["stars"]}></div>
                     </div>
