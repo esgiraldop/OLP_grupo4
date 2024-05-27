@@ -1,7 +1,7 @@
 const {pool} = require('../config/database')
 
 exports.getAllAccessoriesInfo = async () => {
-    // For searching store info for an specific user
+    // For searching store info for a specific user
     const query = `SELECT * FROM avatar_accesories`;
     const {rows} = await pool.query(query)
     console.log("rows: ", rows)

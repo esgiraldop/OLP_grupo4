@@ -2,6 +2,7 @@ const {getAllAccessoriesInfo, getUserInfoById, addAccessory2Avatar, updateAcceso
 
 exports.getAllAccessoriesInfo = async (req, res) => {
   try{
+    console.log("TODO BIEN")
     const accessories = await getAllAccessoriesInfo();
     res.status(200).json(accessories)
   } catch (err){
