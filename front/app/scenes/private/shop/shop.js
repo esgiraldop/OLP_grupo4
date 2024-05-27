@@ -1,5 +1,6 @@
 import styles from './shop.css';
 import { shopInnerHTML } from './shopInnerHTML'
+import { usrInfoInnerHTML } from "./usrInfoInnerHTML";
 
 export function shopScene(){
 
@@ -9,11 +10,9 @@ export function shopScene(){
             <div class="${styles["shop_container"]}">
                 <div class="${styles["shop_container_elem"]} ${styles["elem1"]}" id="accessoriesContainer">
                     <!-- Container for the accessories to buy -->
-                    Here goes the shop
                 </div>
                 <div class="${styles["shop_container_elem"]} ${styles["elem2"]}" id="usrInfoContainer">
                     <!-- Container for the accessories my avatar has already -->
-                    Here goes the avatar accesories
                 </div>
                 <div id="loader" class="${styles.loader}"></div>
             </div>
@@ -31,7 +30,11 @@ export function shopScene(){
         $accessoriesContainer.innerHTML = shopInnerHTML(accessories)
 
         // Changing content for avatar accessories
+        const response2 = await fetch(`http://localhost:4000/api/priv/store/usrinfo/${usrId}`)
+        const usrInfo = await response2.json()
+        const $usrInfoContainer = document.getElementById("usrInfoContainer")
 
+        $usrInfoContainer.innerHTML = usrInfoInnerHTML(usrInfo)
     }
 
     return{
