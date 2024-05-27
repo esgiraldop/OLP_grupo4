@@ -12,13 +12,14 @@ export function HomeScene() {
 
   const pageContent = `
   <div class="${styles.hidden}" id="home_container">
-    <h2>Home</h2>
+    <h2>Home vision</h2>
     <p>Welcome to the home view.</p>
     <div id="user-info"></div>
     ${footer}
   </div>
   <div class="${styles.loader}" id="loader">
   </div>
+ 
   `;
 
   const logic = () => {

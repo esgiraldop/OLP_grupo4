@@ -6,20 +6,101 @@ export function RootScene () {
 
     const header = `
         <header class="${styles.header}">
-            <div>
-                <img src=""/>
-            </div>
+     
+       
+
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/login">Servicios</a></li>
-                    <li><a href="/register">Nosotros</a></li>
-                    <li><a href="/register">Contacto</a></li>
-                    <li><a href="/register">Sign Up</a></li>
-                    <li><button id="btn-login">login</button></li>
+                    <li><button class=${styles["btn"]} type=${styles["button"]}>
+                    <strong><a href="/">Home</a></strong>
+                    <div id=${styles["container-stars"]}>
+                      <div id=${styles["stars"]}></div>
+                    </div>
+
+                    <div id=${styles["glow"]}>
+                      <div class=${styles["circle"]}></div>
+                      <div class=${styles["circle"]}></div>
+                    </div>
+                  </button></li>
+                    <li><button class=${styles["btn"]} type=${styles["button"]}>
+                    <strong> <a href="/login">Servicios</a> </strong>
+                    <div id=${styles["container-stars"]}>
+                      <div id=${styles["stars"]}></div>
+                    </div>
+
+                    <div id=${styles["glow"]}>
+                      <div class=${styles["circle"]}></div>
+                      <div class=${styles["circle"]}></div>
+                    </div>
+                  </button>
+                   
+                    </li>
+                    <li>
+                    <button class=${styles["btn"]} type=${styles["button"]}>
+                    <strong><a href="/register">Nosotros</a></strong>
+                    <div id=${styles["container-stars"]}>
+                      <div id=${styles["stars"]}></div>
+                    </div>
+
+                    <div id=${styles["glow"]}>
+                      <div class=${styles["circle"]}></div>
+                      <div class=${styles["circle"]}></div>
+                    </div>
+                  </button>
+                    
+                    </li>
+                    <li>
+                    <button class=${styles["btn"]} type=${styles["button"]}>
+                    <strong> <a href="/register">Contacto</a></strong>
+                    <div id=${styles["container-stars"]}>
+                      <div id=${styles["stars"]}></div>
+                    </div>
+
+                    <div id=${styles["glow"]}>
+                      <div class=${styles["circle"]}></div>
+                      <div class=${styles["circle"]}></div>
+                    </div>
+                  </button>
+                   </li>
+                    <li>
+                    <button class=${styles["btn"]} type=${styles["button"]}>
+                    <strong> <a href="/register">Register</a></strong>
+                    <div id=${styles["container-stars"]}>
+                      <div id=${styles["stars"]}></div>
+                    </div>
+
+                    <div id=${styles["glow"]}>
+                      <div class=${styles["circle"]}></div>
+                      <div class=${styles["circle"]}></div>
+                    </div>
+                  </button>
+                   </li>
+                    <li>  <button class=${styles["btn"]} type=${styles["button"]}>
+                    <strong><a href="/register">Login</a></strong>
+                    <div id=${styles["container-stars"]}>
+                      <div id=${styles["stars"]}></div>
+                    </div>
+
+                    <div id=${styles["glow"]}>
+                      <div class=${styles["circle"]}></div>
+                      <div class=${styles["circle"]}></div>
+                    </div>
+                  </button>
                 </ul>
             </nav>
         </header>
+        
+        <div class=${styles["stars"]}>
+        <div id=${styles["title"]}>
+            <span>SINGULARITY</span>
+            <br>
+        </div>
+        </div>
+        <div id=${styles["container-stars2"]}>
+        
+        <div id=${styles["stars"]}>
+        </div>
+        </div>
     `;
 
     const hero = `
