@@ -1,18 +1,16 @@
 import { navigateTo } from "../../../Router";
 import styles from './root.css'
 
-export function RootScene () {
+export function RootScene (pageContent,logic) {
     const root = document.getElementById('root');
 
     const header = `
         <header class="${styles.header}">
-     
-       
 
             <nav>
                 <ul>
                     <li><button class=${styles["btn"]} type=${styles["button"]}>
-                    <strong><a href="/">Home</a></strong>
+                    <strong><a href="/home">Home</a></strong>
                     <div id=${styles["container-stars"]}>
                       <div id=${styles["stars"]}></div>
                     </div>
@@ -37,7 +35,7 @@ export function RootScene () {
                     </li>
                     <li>
                     <button class=${styles["btn"]} type=${styles["button"]}>
-                    <strong><a href="/register">Nosotros</a></strong>
+                    <strong><a href="/about-us">Nosotros</a></strong>
                     <div id=${styles["container-stars"]}>
                       <div id=${styles["stars"]}></div>
                     </div>
@@ -89,33 +87,33 @@ export function RootScene () {
                 </ul>
             </nav>
         </header>
-        
-        <div class=${styles["stars"]}>
-        <div id=${styles["title"]}>
-            <span>SINGULARITY</span>
-            <br>
-        </div>
-        </div>
-        <div id=${styles["container-stars2"]}>
-        
-        <div id=${styles["stars"]}>
-        </div>
-        </div>
     `;
 
-    const hero = `
-        <img />
-    `;
+/*     const hero = `
+      <main id="publicContent"></main>
+          
+      <div class=${styles["stars"]}>
+      <div id=${styles["title"]}>
+          <span>SINGULARITY</span>
+          <br>
+      </div>
+      </div>
+      <div id=${styles["container-stars2"]}>
+      
+      <div id=${styles["stars"]}>
+      </div>
+      </div>
+    `; */
 
     root.innerHTML = `
         ${header}
+        ${pageContent}
     `;
-
-    // logic
 
     const button = document.getElementById('btn-login');
     button.addEventListener('click', () => {
         navigateTo('/login');
     });
+    return header
 
 }

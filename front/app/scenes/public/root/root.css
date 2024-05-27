@@ -121,7 +121,7 @@ body {
   .btn:active .circle {
     background: #FE53BB;
   }
-  
+
   #stars {
     position: relative;
     background: transparent;
@@ -210,8 +210,8 @@ body {
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
   }
-
-
+  
+  
   #container-stars2 {
     margin-top: 20px;
     position: absolute;
