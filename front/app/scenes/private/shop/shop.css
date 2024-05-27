@@ -131,7 +131,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 10px;
   flex-wrap: wrap;
   padding-top: 34px;
 }
@@ -140,7 +140,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 190px;
+    text-align: center;
+    width: 12rem;
     height: 254px;
     background: linear-gradient(180deg, #160528, #381B77);
     border-radius: 10%;
@@ -150,6 +151,7 @@
     transition: transform 0.3s ease;
     animation: shadowAnimation 5s infinite ease-in-out;
     margin-bottom: 20px;
+    padding: 1rem;
   }
 
   @keyframes shadowAnimation {
@@ -169,8 +171,8 @@
     transform: translate(-50%, -50%);
     width: 150px;
     height: 150px;
-    background: radial-gradient(circle, #53AFDE, #7748CD);
-    border-radius: 50%;
+    /*background: radial-gradient(circle, #53AFDE, #7748CD);*/
+    /*border-radius: 50%;*/
     opacity: 0.6;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -185,8 +187,8 @@
     transform: translate(-50%, -50%);
     width: 80px;
     height: 80px;
-    background: radial-gradient(circle, #53AFDE, #7748CD, transparent);
-    border-radius: 50%;
+    /*background: radial-gradient(circle, #53AFDE, #7748CD, transparent);*/
+    /*border-radius: 50%;*/
     opacity: 0.2;
     transition: opacity 0.2s ease;
   }
@@ -276,13 +278,14 @@
 .shop_container {
     display: flex;
     width: 95%;
-    height: 90%;
+    height: 100vh;
     justify-content: center;
     margin: 0 auto;
 }
 
 .shop_container_elem {
     border: red solid 2px;
+    overflow: scroll;
 }
 
 .shop_container_elem.elem1 {

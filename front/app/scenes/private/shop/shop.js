@@ -1,16 +1,17 @@
 import styles from './shop.css';
+import { shopInnerHTML } from './shopInnerHTML'
 
 export function shopScene(){
 
     const pageContent = `
         <div class="${styles["container"]}">
-            <h2>Welcome to the store!</h2>
+            <h2 class="${styles.title}">Welcome to the store!</h2>
             <div class="${styles["shop_container"]}">
-                <div class="${styles["shop_container_elem"]} ${styles["elem1"]}">
+                <div class="${styles["shop_container_elem"]} ${styles["elem1"]}" id="accessoriesContainer">
                     <!-- Container for the accessories to buy -->
                     Here goes the shop
                 </div>
-                <div class="${styles["shop_container_elem"]} ${styles["elem2"]}">
+                <div class="${styles["shop_container_elem"]} ${styles["elem2"]}" id="usrInfoContainer">
                     <!-- Container for the accessories my avatar has already -->
                     Here goes the avatar accesories
                 </div>
@@ -19,8 +20,18 @@ export function shopScene(){
         </div>
     `
 
-    const logic = () => {
-        console.log("hello from shop logic");
+    const logic = async () => {
+        const usrId = localStorage.getItem('userId')
+
+        // Changing content for all accessories
+        const response1 = await fetch('http://localhost:4000/api/priv/store')
+        const accessories = await response1.json()
+        const $accessoriesContainer = document.getElementById("accessoriesContainer")
+
+        $accessoriesContainer.innerHTML = shopInnerHTML(accessories)
+
+        // Changing content for avatar accessories
+
     }
 
     return{
