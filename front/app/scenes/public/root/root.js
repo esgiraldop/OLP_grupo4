@@ -6,7 +6,7 @@ export function RootScene () {
 
     const header = `
         <header class="${styles.header}">
-          
+     
        
 
             <nav>
@@ -89,10 +89,16 @@ export function RootScene () {
                 </ul>
             </nav>
         </header>
+        
         <div class=${styles["stars"]}>
         <div id=${styles["title"]}>
             <span>SINGULARITY</span>
             <br>
+        </div>
+        </div>
+        <div id=${styles["container-stars2"]}>
+        
+        <div id=${styles["stars"]}>
         </div>
         </div>
     `;
