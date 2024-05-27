@@ -7,29 +7,27 @@ export function languagesScene(params){
 
     if (params.get('pathID')){
         const routeID = params.get('pathID')
-
         pageContent = `
         <div class="${styles.container}">
-        <h2 class="${styles.title}">Bienvenido! Estos son los lenguajes que puedes estudiar</h2>
         <div id="langs-container"></div>
+        <div id="loader" class="${styles.loader}"></div>
+        </div>
         </div>
         `
+
         logic = async () =>{
             const $langsContainer = document.getElementById("langs-container")
-            // const resp = await fetch(`http://localhost:3000/learningPaths?id=${routeID}`)
-            // const resp = await fetch(`http://localhost:4000/api/priv/routes?id=${routeID}`)
-            // const route = await resp.json()
-            // Based on the id, query to the database the languages
-                // const resp2 = await fetch(`http://localhost:3000/courses?learningPathId=${routeID}`)
-            const resp2 = await fetch(`http://localhost:4000/api/priv/languages/${routeID}`)
+            const resp = await fetch(`http://localhost:4000/api/priv/languages/${routeID}`)
+            const langArray = await resp.json()
 
-            const langArray = await resp2.json()
-            console.log(langArray);
+            document.getElementById('loader').classList.add(styles["hide-loader"])
 
             //Pinto en el DOM
             $langsContainer.innerHTML = `
+            <h2 class="${styles.title}">Bienvenido a la sección de lenguajes</h2>
             <button class="${styles['btn-new-path']}" id="createpath">Create new language</button>
             <button class="${styles['btn-edit-path']}" id="createpath">Edit languages</button>
+            <div class="${styles["img-container"]}">
                 ${langArray.map(elem => `
                         <img id=${elem.id} class="${styles.img}" src="${elem.language_img}"></img>  
                         `).join('')}

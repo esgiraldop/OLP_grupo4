@@ -7,7 +7,7 @@ export function PathScene() {
   // Define el contenido de la página como una cadena de texto HTML
   let pageContent = `
     <div class="${styles.container}">
-    <h2 class="${styles.title}">Bienvenido! Estas son las rutas que puedes estudiar</h2>
+
     <div id="paths-container"></div>
     <div id="loader" class="${styles.loader}"></div>
     </div>
@@ -23,6 +23,7 @@ export function PathScene() {
 
     // Pinto en el DOM
     $myContent.innerHTML = `
+    <h2 id="h2-title" class="${styles.title}">!Bienvenido! Estas son las rutas que puedes estudiar</h2>
         <button class="${
           styles["btn-new-path"]
         }" id="createpath">Create new path</button>
