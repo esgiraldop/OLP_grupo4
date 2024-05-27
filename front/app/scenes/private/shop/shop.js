@@ -6,6 +6,13 @@ export function shopScene(){
 
     const pageContent = `
         <div class="${styles["container"]}">
+            <div id="loader" class="${styles.loader}"></div>
+            <!-- Starfield moving background -->
+            <div class="${styles["star-field"]}">
+            <div class="${styles.layer}"></div>
+             <div class="${styles.layer}"></div>
+             <div class="${styles.layer}"></div>
+             
             <h2 class="${styles.title}">Welcome to the store!</h2>
             <div class="${styles["shop_container"]}">
                 <div class="${styles["shop_container_elem"]} ${styles["elem1"]}" id="accessoriesContainer">
@@ -14,7 +21,6 @@ export function shopScene(){
                 <div class="${styles["shop_container_elem"]} ${styles["elem2"]}" id="usrInfoContainer">
                     <!-- Container for the accessories my avatar has already -->
                 </div>
-                <div id="loader" class="${styles.loader}"></div>
             </div>
         </div>
     `
@@ -35,6 +41,8 @@ export function shopScene(){
         const $usrInfoContainer = document.getElementById("usrInfoContainer")
 
         $usrInfoContainer.innerHTML = usrInfoInnerHTML(usrInfo)
+
+        document.getElementById('loader').classList.add(styles["hide-loader"])
     }
 
     return{
