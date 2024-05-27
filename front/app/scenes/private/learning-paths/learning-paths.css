@@ -145,7 +145,7 @@ animation: textShine 5s ease-in-out infinite alternate;
     to {
         transform: translateZ(-1200px);
         opacity: 0.5;
-    } 
+    }
 }
 
 .star-field {

@@ -1,9 +1,10 @@
-const {getAllUsersInfo, getUserInfoById, addAccessory2Avatar, updateAccesory2Avatar, deleteAccesory2Avatar} = require('../models/storeModel')
+const {getAllAccessoriesInfo, getUserInfoById, addAccessory2Avatar, updateAccesory2Avatar, deleteAccesory2Avatar} = require('../models/storeModel')
 
-exports.getAllUsersInfo = async (req, res) => {
+exports.getAllAccessoriesInfo = async (req, res) => {
   try{
-    //const routes = await getAllUsersInfo();
-    res.status(200).json({message: "This function is not enabled yet"})
+    console.log("TODO BIEN")
+    const accessories = await getAllAccessoriesInfo();
+    res.status(200).json(accessories)
   } catch (err){
     console.error("Error when getting all the users info: ", err)
     res.status(500).json({message: "Error on the server"})
