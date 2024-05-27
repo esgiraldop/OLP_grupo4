@@ -11,16 +11,15 @@ export function DashboardLayout(pageContent, logic, footer, navbarData, sidebarD
   const root = document.getElementById('root');
 
   sidebarData = [
-    { href: '/dashboard', name: 'Home', icon: "/assets/home.svg" },
+    { href: '/dashboard', name: 'Home', icon: "assets/home.svg"},
     // { href: '/dashboard/reports', name: 'Reports' },
     // { href: '/dashboard/settings', name: 'Settings' },
     // { href: '/dashboard/users', name: 'Users' },
     // { href: '/dashboard/products', name: 'Products' },
     // { href: '/dashboard/forum', name: 'Forum' },
     // { href: '/dashboard/show-cases', name: 'Showcases' },
-    { href: '/dashboard/shop', name: 'Shop', icon: "/assets/cartshop.svg" },
-    { href: '/dashboard/learning-paths', name: 'Learning Paths', icon: "/assets/rutas.svg" }
-
+    { href: '/dashboard/shop', name: 'Shop', icon: "assets/cartshop.svg"},
+    { href: '/dashboard/learning-paths', name: 'Learning Paths', icon: "assets/rutas.svg"}
   ];
 
  // { href: '/dashboard/languages', name: 'Languages' } // This link should not be accessible from the sidebar, but from the "routes" scene
