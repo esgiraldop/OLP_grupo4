@@ -7,7 +7,6 @@ export function PathScene() {
   // Define el contenido de la página como una cadena de texto HTML
   let pageContent = `
     <div class="${styles.container}">
-
     <div id="paths-container"></div>
     <div id="loader" class="${styles.loader}"></div>
     </div>
@@ -42,8 +41,6 @@ export function PathScene() {
                  <div class="${styles.layer}"></div>
                  <div class="${styles.layer}"></div>
                  <div class="${styles.layer}"></div>
-                 
-                
                 `;
     //Evento
     // Obtiene todos los elementos 'button' en el documento

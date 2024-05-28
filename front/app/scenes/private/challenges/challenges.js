@@ -7,18 +7,19 @@ export function challengesScene(params) {
 
     if (params.get('modID')) {
         const moduleID = params.get('modID')
-
         pageContent = `
-        <div class=${styles['container']}>
-            <div id="chalgs-container" class=${styles['chalgs-container']}>
-            </div>
+        <div class="${styles.container}">
+            <div id="chalgs-container"></div>
+            <div id="loader" class="${styles.loader}"></div>
         </div>
+
         `
         logic = async () => {
             const $chalsContainer = document.getElementById("chalgs-container")
             const resp = await fetch(`http://localhost:4000/api/priv/challenges/${moduleID}`)
             const chalArray = await resp.json()
-            console.log(chalArray);
+
+            document.getElementById('loader').classList.add(styles["hide-loader"])
 
             $chalsContainer.innerHTML = `
             <h2 class=${styles['title']}>Bienvenido! Estos son los retos que puedes realizar</h2>

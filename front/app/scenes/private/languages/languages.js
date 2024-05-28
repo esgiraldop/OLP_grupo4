@@ -9,10 +9,16 @@ export function languagesScene(params){
         const routeID = params.get('pathID')
         pageContent = `
         <div class="${styles.container}">
-        <div id="langs-container"></div>
-        <div id="loader" class="${styles.loader}"></div>
+            <div id="langs-container"></div>
+            <div id="loader" class="${styles.loader}"></div>
+
         </div>
+            <div class="${styles["star-field"]}">
+            <div class="${styles.layer}"></div>
+            <div class="${styles.layer}"></div>
+            <div class="${styles.layer}"></div>
         </div>
+
         `
 
         logic = async () =>{
