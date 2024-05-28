@@ -4,7 +4,6 @@ exports.getAllAccessoriesInfo = async () => {
     // For searching store info for a specific user
     const query = `SELECT * FROM avatar_accesories`;
     const {rows} = await pool.query(query)
-    console.log("rows: ", rows)
     return rows
 }
 
@@ -29,7 +28,6 @@ exports.getUserInfoById = async (id) => {
                 WHERE users.id = $1
     `;
     const {rows} = await pool.query(query, [id])
-    console.log("rows: ", rows)
     return rows
 }
 

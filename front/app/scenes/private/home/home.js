@@ -7,14 +7,19 @@ export function HomeScene() {
   // const randomNumber = Math.floor(Math.random() * 10) + 1;
 
   const footer = `
-  <footer><p>All rights reserved.</p></footer>
+<!--  <footer><p>All rights reserved.</p></footer>-->
   `;
 
   const pageContent = `
-  <div class="${styles.hidden}" id="home_container">
-    <h2>Home vision</h2>
-    <p>Welcome to the home view.</p>
-    <div id="user-info"></div>
+  <div class="${styles.container}" id="home_container">
+    <!--    <h2>Home vision</h2>-->
+    <!--    <p>Welcome to the home view.</p>-->
+    <!-- Starfield moving background -->
+    <div class="${styles["star-field"]}">
+    <div class="${styles.layer}"></div>
+    <div class="${styles.layer}"></div>
+    <div class="${styles.layer}"></div>
+    <div style="border: 2px red solid margin: 0 auto" id="user-info"></div>
     ${footer}
   </div>
   <div class="${styles.loader}" id="loader">

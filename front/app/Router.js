@@ -1,5 +1,6 @@
 import { DashboardLayout } from './components/layout/private/dashboard/dashboard-layout';
 import { routes } from './helpers/routes';
+import { navbarDataGenerator } from './helpers/navbarDataGenerator'
 
 const API_URL = 'http://localhost:4000/api/auth/verify-token';
 
@@ -51,7 +52,8 @@ async function checkAuth(path, params) {
       if (privateRoute) {
         // hace la peticion al backend.
         const { pageContent, logic } = privateRoute.component(params);
-        DashboardLayout(pageContent, logic)
+        const navbarData = await navbarDataGenerator()
+        DashboardLayout(pageContent, logic, "", navbarData)
         return;
       } else {
         navigateTo('/dashboard'); // Redirigir a dashboard si la ruta privada no existe

@@ -42,18 +42,18 @@ $form.addEventListener('submit', async (event)=>{
     passwordWithoutEmptySpaces = noEmptySpaces($password); //Validate that the password does not contain empty spaces.
 
     if( dotAfterAtEmail && charactersNotTogetherEmail && passwordWithoutEmptySpaces ){
-        const userCreated = await fetchApi('http://localhost:4000/api/priv/users', {
+        const userCreated = await fetchApi('http://localhost:4000/api/auth/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name: $userName,
+                username: $userName,
                 email: $userEmail,
                 password: $password
             })
         }) 
-        
+        console.log("uservreated: ",userCreated);
         if(userCreated){
             alert("Usuario creado correctamente");
             navigateTo('/login');
