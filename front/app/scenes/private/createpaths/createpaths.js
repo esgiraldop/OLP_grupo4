@@ -10,7 +10,13 @@ export function CreatePathScene() {
     // Inicializa el contenedor HTML para el editor y un botón para guardar el contenido
     const editorContent = `<div id="editor" class="${styles.editor}"></div>`
     const pageContent = `
-    <h1>Crear un nuevo reto</h1>
+    <!-- Starfield animation -->
+    <div class="${styles["star-field"]}">
+    <div class="${styles.layer}"></div>
+    <div class="${styles.layer}"></div>
+    <div class="${styles.layer}"></div>
+    
+    <h1 class="${styles["title"]}">Create a new learning path</h1>
     <form id="create-challenge-form">
         <div class="${styles["challenge_title-container"]}">
             <label for="title">Título</label>
