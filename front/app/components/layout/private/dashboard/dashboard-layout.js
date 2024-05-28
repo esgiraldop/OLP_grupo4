@@ -23,12 +23,12 @@ export function DashboardLayout(pageContent, logic, footer, navbarData, sidebarD
 
   ];
 
- // { href: '/dashboard/languages', name: 'Languages' } // This link should not be accessible from the sidebar, but from the "routes" scene
-
-  navbarData = {
-    user: 'Nicolas Picon',
-    userImage: 'https://randomuser.me/api/portraits/men/75.jpg',
-  };
+  // Old info
+  // navbarData = {
+  //   user: 'Nicolas Picon',
+  //   userImage: 'https://randomuser.me/api/portraits/men/75.jpg',
+  // };
+  console.log("navbarData", navbarData)
 
   root.innerHTML = `
   <div class="${styles.container}">

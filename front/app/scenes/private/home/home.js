@@ -12,8 +12,13 @@ export function HomeScene() {
 
   const pageContent = `
   <div class="${styles.container}" id="home_container">
-<!--    <h2>Home vision</h2>-->
-<!--    <p>Welcome to the home view.</p>-->
+    <!--    <h2>Home vision</h2>-->
+    <!--    <p>Welcome to the home view.</p>-->
+    <!-- Starfield moving background -->
+    <div class="${styles["star-field"]}">
+    <div class="${styles.layer}"></div>
+    <div class="${styles.layer}"></div>
+    <div class="${styles.layer}"></div>
     <div style="border: 2px red solid margin: 0 auto" id="user-info"></div>
     ${footer}
   </div>

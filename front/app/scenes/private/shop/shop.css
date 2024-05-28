@@ -27,7 +27,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 36px;
+  padding-top: 40px;
+  /*font-size: 36px;*/
+  background: linear-gradient(
+    to right,
+    #e2e1e4 20%,
+    #00affa 30%,
+    #0190cd 70%,
+    #ffffff 80%
+);
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+text-fill-color: transparent;
+background-size: 500% auto;
+animation: textShine 5s ease-in-out infinite alternate;
+}
+
+/* title keyframes */
+@keyframes textShine {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
 }
 
 .hide-loader{
@@ -318,7 +342,7 @@
 .shop_container {
     display: flex;
     width: 95%;
-    height: 100vh;
+    height: 85vh;
     justify-content: center;
     margin: 0 auto;
 }
