@@ -18,6 +18,8 @@ import { PostScene } from '../scenes/private/posts/posts';
 import { ChallengeScene_nico, CreateChallengeScene_nico } from '../scenes/private/challenges_nico';
 import { ModuleCreateScene_nico } from '../scenes/private/modules_nico/module-create';
 import { CreatePathScene } from '../scenes/private/createpaths/'
+import { AboutUsPage } from '../scenes/public/about-us/about-us';
+import { publicHome } from '../scenes/public/publicHome/publicHome';
 
 export const routes = {
     private: [
@@ -44,5 +46,7 @@ export const routes = {
         { path: '/login', component: LoginPage },
         { path: '/register', component: RegisterPage },
         { path: '/profile', component: ProfileScene },
+        { path: '/about-us', component: AboutUsPage},
+        { path: '/home', component: publicHome }
     ]
 };
