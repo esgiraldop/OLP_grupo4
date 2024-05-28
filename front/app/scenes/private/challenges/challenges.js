@@ -22,7 +22,7 @@ export function challengesScene(params) {
             document.getElementById('loader').classList.add(styles["hide-loader"])
 
             $chalsContainer.innerHTML = `
-            <h2 class=${styles['title']}>Bienvenido! Estos son los retos que puedes realizar</h2>
+            <h2 class=${styles['title']}>Here are the challenges you can take on</h2>
             <button class="${styles['btn-new-chalg']}" id="createchalg">Create new challenge</button>
             <button class="${styles['btn-edit-chalg']}" id="createchalg">Edit challenge</button>
             <div class="${styles["btn-container"]}">
