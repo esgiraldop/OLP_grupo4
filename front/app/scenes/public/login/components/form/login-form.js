@@ -10,11 +10,11 @@ export async function LoginFormComponent() {
   <main class=${styles.loginPage} style="background-image: url(${galaxia})">
   <form class=${styles.form_login} id="loginForm">
       <h4>Login</h4>
-      <input class=${styles.controls} type="email" id="email" placeholder="correo" required>
-      <input class=${styles.controls} type="password" id="password" placeholder="contraseña" required>
+      <input class=${styles.controls} type="email" id="email" placeholder="email" required>
+      <input class=${styles.controls} type="password" id="password" placeholder="password" required>
       <input type="submit" value="Login" class=${styles.button}>
       <div class=${styles.register_link}>
-          <p>¿No tienes una cuenta?    <a href="./register">Registrame</a></p>
+          <p>Don't have an account yet?    <a href="./register">Sign Up</a></p>
       </div>
   </form>
 </main>
