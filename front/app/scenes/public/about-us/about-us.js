@@ -1,3 +1,4 @@
+
 import styles from './about-us.css'
 import { RootScene } from '../root/root';
 
@@ -46,6 +47,13 @@ export function AboutUsPage(){
                 </div>
                 <span>Jerónimo Cruz</span>
                 <p class=${styles["job"]}>Frontend developer, music event staff</p>
+            </div>
+            <div class=${styles["stars"]}>
+                </div>
+                <div id=${styles["container-stars2"]}>
+                
+                <div id=${styles["stars"]}>
+                </div>
             </div>
         </div>
     `;

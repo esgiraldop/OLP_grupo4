@@ -21,7 +21,7 @@ export function RootScene (pageContent,logic) {
                     </div>
                   </button></li>
                     <li><button class=${styles["btn"]} type=${styles["button"]}>
-                    <strong> <a href="/login">Servicios</a> </strong>
+                    <strong> <a href="/services">Services</a> </strong>
                     <div id=${styles["container-stars"]}>
                       <div id=${styles["stars"]}></div>
                     </div>
@@ -35,7 +35,7 @@ export function RootScene (pageContent,logic) {
                     </li>
                     <li>
                     <button class=${styles["btn"]} type=${styles["button"]}>
-                    <strong><a href="/about-us">Nosotros</a></strong>
+                    <strong><a href="/about-us">About us</a></strong>
                     <div id=${styles["container-stars"]}>
                       <div id=${styles["stars"]}></div>
                     </div>
@@ -49,7 +49,7 @@ export function RootScene (pageContent,logic) {
                     </li>
                     <li>
                     <button class=${styles["btn"]} type=${styles["button"]}>
-                    <strong> <a href="/register">Contacto</a></strong>
+                    <strong> <a href="/contact">Contact</a></strong>
                     <div id=${styles["container-stars"]}>
                       <div id=${styles["stars"]}></div>
                     </div>
