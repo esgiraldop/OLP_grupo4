@@ -12,6 +12,7 @@ export function AboutUsPage(){
                 <div class=${styles["card-border-top"]}">
                 </div>
                 <div class=${styles["img"]}>
+                    <img src="../../../assets/avatar/hombre.png">
                 </div>
                 <span>Erick Giraldo</span>
                 <p class=${styles["job"]}>Backend developer, Aeronautic engineer</p>
