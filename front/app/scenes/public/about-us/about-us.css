@@ -7,9 +7,11 @@
     margin: 20px;
     width: 370px;
     height: 500px;
-    background: #3405a3;
+    background: transparent;
+    backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 1px 5px 60px 0px #100a886b;
+    border: 2px solid white;
   }
    
   .card .card-border-top {
@@ -39,12 +41,14 @@
   }
    
   .card .img {
+    border: 2px solid white;
+    background-color: white;
     width: 70px;
     height: 80px;
-    background: #6b64f3;
     border-radius: 15px;
     margin: auto;
     margin-top: 25px;
+    object-fit: cover;
   }
 
   #stars {
