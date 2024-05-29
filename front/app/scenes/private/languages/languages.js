@@ -30,9 +30,15 @@ export function languagesScene(params) {
 
             //Pinto en el DOM
             $langsContainer.innerHTML = `
+<<<<<<< HEAD
             <h2 class="${styles.title}">Bienvenido a la sección de lenguajes</h2>
             <button class="${styles['btn-new-lang']}" id="createlang">Create new language</button>
             <button class="${styles['btn-edit-lang']}" id="editlang">Edit languages</button>
+=======
+            <h2 class="${styles.title}">Welcome to the languages section</h2>
+            <button class="${styles['btn-new-path']}" id="createpath">Create new language</button>
+            <button class="${styles['btn-edit-path']}" id="createpath">Edit languages</button>
+>>>>>>> db371f958bc3c893dd0a52cca9f9307b1b2d0290
             <div class="${styles["img-container"]}">
                 ${langArray.map(elem => `
                     <div id="lang-img"> 

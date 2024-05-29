@@ -30,7 +30,7 @@ export function modulesScene(params) {
             // Pinto en el DOM
             $modsContainer.innerHTML = `
             <div class="${styles["img-container"]}">
-            <h2 class=${styles['title']}>Bienvenido! Estos son los módulos que puedes estudiar</h2>
+            <h2 class=${styles['title']}>These are the modules you can study</h2>
             <div class=${styles['section']}>Theory</div>
             <div class=${styles['section']}>Practice</div>
             <div class=${styles['module']}>1. Introduction to Javascript</div>
@@ -55,7 +55,7 @@ export function modulesScene(params) {
                     challengeContainer.innerHTML = `
                     <div class="${styles['img-challenge-container']}">
                         <div id=${elem.id} class="${styles['img-challenge']}"></div>
-                        <p class="${styles['hover-text']}">Ir al reto</p>
+                        <p class="${styles['hover-text']}">Go to challenge</p>
                     </div>
                     
         `;

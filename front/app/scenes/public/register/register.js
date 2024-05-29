@@ -10,13 +10,13 @@ export async function RegisterPage() {
     root.innerHTML = `
     <main class=${styles.registerPage} style="background-image: url(${galaxia})">
         <form class=${styles.form_register} id="form-register">
-            <h4>Registrarte</h4>
-            <input class=${styles.controls} type="text" id="name" placeholder="nombre" required>
-            <input class=${styles.controls} type="email" id="email" placeholder="correo" required>
-            <input class=${styles.controls} type="password" id="password" placeholder="contraseña" required>
-            <input type="submit" value="Registrarme" class=${styles.button}>
+            <h4>Sign Up</h4>
+            <input class=${styles.controls} type="text" id="name" placeholder="Username" required>
+            <input class=${styles.controls} type="email" id="email" placeholder="Email" required>
+            <input class=${styles.controls} type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Sign Up" class=${styles.button}>
             <div class=${styles.login_link}>
-                <p>¿Ya tengo una cuenta?    <a href="./login">Ingresar</a></p>
+                <p>Already have an account?   <a href="./login">Login</a></p>
             </div>
         </form>
     </main>
@@ -55,7 +55,7 @@ $form.addEventListener('submit', async (event)=>{
         }) 
         console.log("uservreated: ",userCreated);
         if(userCreated){
-            alert("Usuario creado correctamente");
+            alert("User created successfully");
             navigateTo('/login');
         }
     }
@@ -63,13 +63,13 @@ $form.addEventListener('submit', async (event)=>{
         let invalidAlert = "";
     
         if(! dotAfterAtEmail){
-            invalidAlert += "Debe haber al menos un punto '.' despues del '@' en el correo electrónico\n"
+            invalidAlert += "There must be at least one dot '.' after the at '@' in the email\n"
         }
         if(!charactersNotTogetherEmail){
-            invalidAlert += "El punto '.' y el símbolo '@' no pueden estar juntos en el correo electrónico.\n"
+            invalidAlert += "the dot '.' and the at '@' can't be togther in the email.\n"
         }
         if(!passwordWithoutEmptySpaces){
-            invalidAlert += "La contraseña no puede contener espacios vacios.\n"
+            invalidAlert += "the password cannot have empty spaces.\n"
         }
         alert(invalidAlert);
     }
