@@ -13,12 +13,12 @@ exports.getByRouteId = async (id) => {
     return rows
 }
 
-exports.addLanguage = async (name, description, id_route) => {
+exports.addLanguage = async (name, description, content, id_route) => {
     const query = `INSERT INTO languages (name, description, id_route)
-    VALUES ($1, $2, $3)
+    VALUES ($1, $2, $3, $4)
     RETURNING id, name, description, id_route
     `
-    const values = [name, description, id_route]
+    const values = [name, description, content, id_route]
     const {rows} = await pool.query(query, values)
     return rows[0]
 }
