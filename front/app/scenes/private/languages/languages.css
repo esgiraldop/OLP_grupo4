@@ -120,7 +120,7 @@ animation: textShine 5s ease-in-out infinite alternate;
   80% {background-position: 0% 50% ,50% 50% ,100% 100%}
 }
 
-.btn-new-path{
+.btn-new-lang{
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -138,15 +138,15 @@ animation: textShine 5s ease-in-out infinite alternate;
     font-weight: bold;
     cursor: pointer;
 } 
-  .btn-new-path:hover::before, .btn-new-path:hover::after {
+  .btn-new-lang:hover::before, .btn-new-lang:hover::after {
     transform: scale(0)
   }
   
-  .btn-new-path:hover {
+  .btn-new-lang:hover {
     box-shadow: inset 0px 0px 100px #1479EA;
   }
 
-  .btn-edit-path{
+  .btn-edit-lang{
     position: absolute;
     bottom: 20px;
     right: 230px;
@@ -164,11 +164,11 @@ animation: textShine 5s ease-in-out infinite alternate;
     font-weight: bold;
     cursor: pointer;
 } 
-  .btn-edit-path:hover::before, .btn-edit-path:hover::after {
+  .btn-edit-lang:hover::before, .btn-edit-lang:hover::after {
     transform: scale(0)
   }
   
-  .btn-edit-path:hover {
+  .btn-edit-lang:hover {
     box-shadow: inset 0px 0px 100px #1479EA;
   }
 

@@ -18,6 +18,7 @@ import { PostScene } from '../scenes/private/posts/posts';
 import { ChallengeScene_nico, CreateChallengeScene_nico } from '../scenes/private/challenges_nico';
 import { ModuleCreateScene_nico } from '../scenes/private/modules_nico/module-create';
 import { CreatePathScene } from '../scenes/private/createpaths/'
+import { CreateLangScene } from '../scenes/private/createlangs'
 import { AboutUsPage } from '../scenes/public/about-us/about-us';
 import { publicHome } from '../scenes/public/publicHome/publicHome';
 import { contact } from '../scenes/public/contact/contact';
@@ -35,6 +36,7 @@ export const routes = {
         { path: '/dashboard/learning-paths', component: PathScene },
         { path: '/dashboard/learning-paths/create', component: CreatePathScene },
         { path: '/dashboard/learning-paths/languages', component: languagesScene},
+        { path: '/dashboard/learning-paths/languages/create', component: CreatePathScene },
         { path: '/dashboard/learning-paths/languages/modules', component: modulesScene},
         { path: '/dashboard/learning-paths/languages/modules/challenges',component: challengesScene },
         { path: '/dashboard/games', component: GameScene },

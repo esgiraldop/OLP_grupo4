@@ -23,15 +23,13 @@ export function PathScene() {
     // Pinto en el DOM
     $myContent.innerHTML = `
     <h2 id="h2-title" class="${styles.title}">Welcome! These are the learning paths you can choose</h2>
-        <button class="${
-          styles["btn-new-path"]
-        }" id="createpath">Create new path</button>
-        <button class="${
-          styles["btn-edit-path"]
-        }" id="editpath">Edit paths</button>
+        <button class="${styles["btn-new-path"]
+      }" id="createpath">Create new path</button>
+        <button class="${styles["btn-edit-path"]
+      }" id="editpath">Edit paths</button>
             <div class="${styles["card-container"]}">
             ${learningPaths
-              .map((path) => `
+        .map((path) => `
                 <div class="${styles.card}" id="route-card"> 
                     <button class=${styles["btn-course"]} id="${path.id}">Go to ${path.name}</button>
                 </div>
@@ -56,10 +54,7 @@ export function PathScene() {
           // Cuando se hace click en el botón, navega a la URL especificada
           // Incluye el id del botón como un parámetro de consulta en la URL
           navigateTo(
-            `/dashboard/learning-paths/languages?pathID=${e.target.id}`
-          )
-        )
-    );
+            `/dashboard/learning-paths/languages?pathID=${e.target.id}`)));
 
     //Evento de crear new path
     const $buttonPath = document.getElementById("createpath");
@@ -67,27 +62,8 @@ export function PathScene() {
       navigateTo(`/dashboard/learning-paths/create`);
     });
   };
-
   return {
     pageContent,
     logic,
   };
 }
-
-//Otra pagina
-// if (params.get('id')){
-//     pageContent = `${helperContent}`
-//     logic = () => {
-//         console.log(document.getElementById('content'),"desde constent");
-//     }
-// }
-
-// const $myTitle = document.getElementById('my-title');
-// $myTitle.addEventListener('click', (e) => {
-//     console.log(e);
-//     e.preventDefault();
-//     console.log(e.target);
-//     console.log("Click desde $Mytitle");
-// })
-
-// Devuelve un objeto con el contenido de la página y la lógica
