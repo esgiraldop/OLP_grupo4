@@ -7,17 +7,24 @@ export async function LoginFormComponent() {
   const $root = document.getElementById('root');
 
   $root.innerHTML = `
-  <main class=${styles.loginPage} style="background-image: url(${galaxia})">
-  <form class=${styles.form_login} id="loginForm">
-      <h4>Login</h4>
-      <input class=${styles.controls} type="email" id="email" placeholder="email" required>
-      <input class=${styles.controls} type="password" id="password" placeholder="password" required>
-      <input type="submit" value="Login" class=${styles.button}>
-      <div class=${styles.register_link}>
-          <p>Don't have an account yet?    <a href="./register">Sign Up</a></p>
-      </div>
-  </form>
-</main>
+  <div class=${styles.login_page} style="background-image: url(${galaxia})">
+    <form class=${styles.form_login} id="loginForm">
+        <h4>Login</h4>
+        <div class=${styles.input_container}>
+          <p class=${styles.label_name}>User Email:</p> 
+          <input class=${styles.input} type="email" id="email" placeholder="useremail@example.com" required>
+        </div>
+        <div class=${styles.input_container}>  
+          <p class=${styles.label_name}>Password:</p>
+          <input class=${styles.input} type="password" id="password" placeholder="password" required>   
+        </div>
+          <input type="submit" value="Login" class=${styles.button}>
+        <div class=${styles.register_link}>
+            <p>Don't have an account yet?    <a href="./register">Sign Up</a></p>
+        </div>
+        <a class=${styles.btn_go_home} href="/home">Go To Home</a>
+    </form>
+</div>
     `;
 
   const $form = document.getElementById('loginForm');
