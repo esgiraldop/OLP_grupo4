@@ -158,15 +158,25 @@
 53AFDE */
 
 .myCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     position: absolute;
     margin-top: 50px;
     margin-left: 400px;
-    align-self: center;
     background-color: transparent;
     width: 290px;
     height: 434px;
     perspective: 1000px;
   }
+  .myCard p {
+    word-wrap: break-word; 
+    overflow-wrap: anywhere;
+    hyphens: auto; 
+    text-align: center;
+    margin: 0; 
+    padding: 10px;
+}
   
   .title {
     width: 100%;
