@@ -20,8 +20,8 @@ export function shopInnerHTML(accessories){
                             </figure>
                             <h3> ${elem.req_points} </h3>
                         </div>
-                        <div class="${styles.buy_element} ${styles.buy_bttn}">
-                            <button id="bttn_${elem.id}">Buy</button>
+                        <div class="${styles.buy_element} ${styles.buy_bttn}" id="buyBttnContainer">
+                            <button class=${styles["btn"]}  id="${elem.id}">Buy</button>
                         </div>
                     </div>
                 </div>

@@ -25,6 +25,16 @@ exports.update = async (id, data) => {
   return rows[0];
 }
 
+exports.updateUsrPoints = async (id, newPoints) => {
+  const query = `UPDATE users
+                        SET points = $2
+                        WHERE id = $1
+                          RETURNING id, points`
+  const values = [id, newPoints]
+  const {rows} = await pool.query(query, values)
+  return rows[0]
+}
+
 exports.delete = async (id) => {
   const query = `DELETE FROM users WHERE id = $1`;
   await pool.query(query, [id]);

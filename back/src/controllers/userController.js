@@ -1,4 +1,4 @@
-const { findById, update, delete: deleteUser, getAll } = require("../models/userModel");
+const { findById, update, delete: deleteUser, getAll, updateUsrPoints } = require("../models/userModel");
 
 exports.getAll = async (req, res) => {
     try {
@@ -46,6 +46,21 @@ exports.update = async (req, res) => {
     } catch (err) {
         console.error('Error en update:', err);
         res.status(500).json({ message: 'Error en el servidor' });
+    }
+}
+
+exports.updateUsrPoints = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { points } = req.body;
+        console.log("points: ", points)
+        // Update user points
+        const updatedUser = await updateUsrPoints(id, points);
+
+        res.status(200).json({ message: 'User points updated successfully', user: updatedUser });
+    } catch (err) {
+        console.error('Error when updating the user points:', err);
+        res.status(500).json({ message: 'Error in the server' });
     }
 }
 
