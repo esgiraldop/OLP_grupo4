@@ -5,11 +5,11 @@ import styles from './create-langs.css'
 import { fetchApi } from "../../../helpers/fetch-api";
 import { navigateTo } from "../../../Router";
 
-export function CreateLangScene() {
+export function CreateLangScene(params) {
     // Inicializa el contenedor HTML para el editor y un botón para guardar el contenido
     const editorContent = `<div id="editor" class="${styles.editor}"></div>`
     const pageContent = `
-    <h1>Crear un nuevo lenguaje</h1>
+    <h1 class="${styles["title"]}">Crear un nuevo lenguaje</h1>
     <form id="create-language-form">
         <div class="${styles["language_title-container"]}">
             <label for="title">Título</label>
@@ -22,13 +22,17 @@ export function CreateLangScene() {
         
         <div class="${styles["description-container"]}">
             <label>Descripción del lenguaje</label>
+        </div>
+        <div class="${styles["img-url"]}">
+            <label>Insertar URL de la imagen</label>
+            <input id = "img-url"  type="text">
             <div class="${styles["action-buttons"]}">
-            <button type="submit">Publicar</button>
+                <button type="submit">Publicar</button>
             </div>
-            </div>
+        </div>
             ${ToolbarContainer()}
             ${editorContent}
-            </form>
+    </form>
             `;
             // <button id="saveButton" type="button">Guardar</button>
 
@@ -38,6 +42,7 @@ export function CreateLangScene() {
     }
 
     // Lógica para inicializar y configurar Quill
+
     const logic = () => {
         // Quill.register('modules/formula', MathQuillBlot);
         // Espera a que el DOM esté completamente cargado
@@ -51,7 +56,7 @@ export function CreateLangScene() {
             //     formula: true,
             // }
         });
-
+        
         // Listener para manejar la publicación del contenido, o sea, enviar a base de datos.
         document.querySelector('#create-language-form')
             .addEventListener('submit', async (e) => {
@@ -59,6 +64,8 @@ export function CreateLangScene() {
                 e.preventDefault();
                 // Valida que el título y la descripción no estén vacíos
                 const titleValue = document.querySelector('#title').value;
+                const imgUrlValue = document.querySelector('#img-url').value;
+
                 const descriptionValue = document.querySelector('#description').value;
                 if (!titleValue) {
                     alert('Por favor, ingresa un título para tu lenguaje');
@@ -76,10 +83,14 @@ export function CreateLangScene() {
                 if (confirm("¿Estás seguro de que deseas publicar el lenguaje?")) {
                     // Aquí va la lógica para enviar el contenido a la base de datos
                     try {
+                        const routeID = params.get('routeID')
+                        console.log('RouteID :' ,routeID);
                         const data = {
                             name: titleValue,
                             content: localStorage.getItem('quillContent'),
-                            description: descriptionValue
+                            description: descriptionValue,
+                            id_route: routeID,
+                            language_img: imgUrlValue       
                         }
                         const response = await fetchApi('http://localhost:4000/api/priv/languages', {
                             method: 'POST',
@@ -91,8 +102,8 @@ export function CreateLangScene() {
                         });
                         console.log(response);
                         alert('Lenguaje publicado con éxito');
-                        document.querySelector('#create-challenge-form').reset(); // Resetea el formulario
-                        navigateTo('/dashboard/learning-paths');
+                        document.querySelector('#create-language-form').reset(); // Resetea el formulario
+                        navigateTo(`/dashboard/learning-paths/languages?pathID=${routeID}`);
                     } catch (error) {
                         alert('Ha ocurrido un error al publicar el lenguaje. Por favor, inténtalo de nuevo más tarde.');
                         console.error('Error al publicar el lenguaje:', error);
