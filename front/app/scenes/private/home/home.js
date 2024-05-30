@@ -1,5 +1,5 @@
 import styles from './home.css';
-import { ReportScene } from '../reports'
+import { ReportScene } from '../reports';
 
 export function HomeScene() {
 
@@ -7,89 +7,100 @@ export function HomeScene() {
   // const randomNumber = Math.floor(Math.random() * 10) + 1;
 
   const footer = `
-<!--  <footer><p>All rights reserved.</p></footer>-->
+  <!-- <footer><p>All rights reserved.</p></footer> -->
   `;
 
   const pageContent = `
   <div class="${styles.container}" id="home_container">
     <div class="${styles["star-field"]}">
-    <div class="${styles.layer}"></div>
-    <div class="${styles.layer}"></div>
-    <div class="${styles.layer}"></div>
-    <div style="border: 2px red solid margin: 0 auto" id="user-info"></div>
-    ${footer}
-  
-  <div class="${styles.loader}" id="loader">
+      <div class="${styles.layer}"></div>
+      <div class="${styles.layer}"></div>
+      <div class="${styles.layer}"></div>
+      <div style="border: 2px red solid; margin: 0 auto" id="user-info"></div>
+      ${footer}
+      <div class="${styles.loader}" id="loader"></div>
+    </div>
   </div>
- 
   `;
 
   const logic = () => {
-    const token = localStorage.getItem('token')
-    const userId = localStorage.getItem('userId')
-    if(!token || !userId){
-      console.log("Log in not sucessful")
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+    if (!token || !userId) {
+      console.log("Log in not successful");
+      return;
     }
+
     fetch(`http://localhost:4000/api/priv/users/${userId}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Bad response");
+      }
+      return response.json();
+    })
+    .then(userInfo => {
+      return fetch(`http://localhost:4000/api/priv/store/usrinfo/${userId}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
-        }
-        )
-      .then( response =>{
-        if(!response.ok){
-          throw new Error("Bad response")
-        }
-        return response.json()
+      });
+    })
+    .then(response1 => {
+      if (!response1.ok) {
+        throw new Error("Bad response in second fetch");
       }
-      )
-      .then( user => {
-        const userInfo = document.getElementById('user-info');
-        userInfo.innerHTML = 
-        `
-          <div class=${styles["pcc"]}>
-            <div class=${styles["myCard"]}>
-              <div class=${styles["innerCard"]}>
-                <div class=${styles["frontSide"]}>
-                    <p class=${styles["title"]}>User: ${user.username}</p>
-                    <p>${user.email}</p>
-                </div>
-                  <div class=${styles["backSide"]}>
-                      <p class=${styles["title"]}>points <br> ${user.points}</p>
-                      <button class=${styles["btn"]} type=${styles["button"]}>
-                          <strong>SPACE</strong>
-                          <div id=${styles["container-stars"]}>
-                            <div id=${styles["stars"]}></div>
-                          </div>
+      return response1.json();
+    })
+    .then(data => {
+      console.log(data);
 
-                          <div id=${styles["glow"]}>
-                            <div class=${styles["circle"]}></div>
-                            <div class=${styles["circle"]}></div>
-                          </div>
-                        </button>
-
-                  </div>
+      const userInfo = document.getElementById('user-info');
+      userInfo.innerHTML = `
+        <div class=${styles["pcc"]}>
+          <div class=${styles["myCard"]}>
+            <div class=${styles["innerCard"]}>
+              <div class=${styles["frontSide"]}>
+                <figure>
+                  <img src="${data[0].avatar_img}">
+                </figure>
+                <p class=${styles["title"]}>User: ${data[0].username}</p>
+                <p>${data[0].email}</p>
               </div>
-          
-         
-        </div>
+              <div class=${styles["backSide"]}>
+                <p class=${styles["title"]}>Points <br> ${data[0].points}</p>
+                <button class=${styles["btn"]} type="button">
+                  <strong>SPACE</strong>
+                  <div id=${styles["container-stars"]}>
+                    <div id=${styles["stars"]}></div>
+                  </div>
+                  <div id=${styles["glow"]}>
+                    <div class=${styles["circle"]}></div>
+                    <div class=${styles["circle"]}></div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
           <div class=${styles["card1-container"]}>
-          <div class=${styles["card1"]}>
-          <div class=${styles["front-content"]}>
-            <p>Hover me</p>
+            <div class=${styles["card1"]}>
+              <div class=${styles["front-content"]}>
+                <p>Challenges</p>
+              </div>
+              <div class=${styles["content"]}>
+                <p class=${styles["heading"]}>Reto Mensual</p>
+                <p></p>
+                <p class=${styles["heading"]}>Reto Semanal</p>
+                <p></p>
+                <p class=${styles["heading"]}>Reto Diario</p>
+                <p></p>
+              </div>
+            </div>
           </div>
-          <div class=${styles["content"]}>
-            <p class=${styles["heading"]}>Card Hover</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipii
-              voluptas ten mollitia pariatur odit, ab
-              minus ratione adipisci accusamus vel est excepturi laboriosam magnam
-              necessitatibus dignissimos molestias.
-            </p>
-          </div>
-        </div>
-        </div>
-          <div class = ${styles["progress-container"]}>
+          <div class=${styles["progress-container"]}>
             <div class=${styles["card-progress"]}>
               <p>Progreso Back</p>
             </div>
@@ -97,17 +108,20 @@ export function HomeScene() {
               <p>Progreso Front</p>
             </div>
           </div>
-          </div>
-        
-        `;
-        // Finalmente, ocultamos el loader y mostramos el div
-        document.querySelector(`#loader`).classList.add(styles.hidden);
-        document.getElementById('home_container').classList.remove(styles.hidden);
-      })
+        </div>
+      `;
+      
+      // Finalmente, ocultamos el loader y mostramos el div
+      document.querySelector(`#loader`).classList.add(styles.hidden);
+      document.getElementById('home_container').classList.remove(styles.hidden);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   };
 
   return {
     pageContent,
     logic
-  }
+  };
 }

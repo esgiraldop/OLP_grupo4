@@ -18,8 +18,8 @@ export async function navbarDataGenerator (){
             throw new Error("Bad response")
         }
         const usrInfo = await response.json()
-        console.log("usrInfo: ", usrInfo)
-        console.log("usrInfo.username: ", usrInfo.username)
+        // console.log("usrInfo: ", usrInfo)
+        // console.log("usrInfo.username: ", usrInfo.username)
         return {user: usrInfo[0].username, userImage: usrInfo[0].avatar_img}
     }catch (err){
         console.error("Error fetching user info:", err);
