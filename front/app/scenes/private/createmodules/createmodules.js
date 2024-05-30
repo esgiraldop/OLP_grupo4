@@ -1,30 +1,27 @@
 import Quill from "quill"
 import 'quill/dist/quill.snow.css'; // para el tema bubble //TODO: This line was giving me errors
 import { ToolbarContainer } from "./components/toolbar-container";
-import styles from './create-langs.css'
+import styles from './create-modules.css'
 import { fetchApi } from "../../../helpers/fetch-api";
 import { navigateTo } from "../../../Router";
 
-export function CreateLangScene(params) {
+export function CreateModuleScene(params) {
     // Inicializa el contenedor HTML para el editor y un botón para guardar el contenido
     const editorContent = `<div id="editor" class="${styles.editor}"></div>`
     const pageContent = `
-    <h1 class="${styles["title"]}">Crear un nuevo lenguaje</h1>
-    <form id="create-language-form">
-        <div class="${styles["language_title-container"]}">
+    <h1 class="${styles["title"]}">Crear un nuevo modulo</h1>
+    <form id="create-module-form">
+        <div class="${styles["module_title-container"]}">
             <label for="title">Título</label>
-            <input type="text" id="title" name="title" class="${styles["language_title-input"]}">
+            <input type="text" id="title" name="title" class="${styles["module_title-input"]}">
         </div>
-        <div class="${styles["language_description-container"]}">
+        <div class="${styles["module_description-container"]}">
             <label>Descripción</label>
-            <textarea id="description" name="description" class="${styles["language_description-input"]}"></textarea>
+            <textarea id="description" name="description" class="${styles["module_description-input"]}"></textarea>
         </div>
         
-        <div class="${styles["img-url"]}">
-        <label>Insertar URL de la imagen</label>
-        <input id = "img-url"  type="text">
         <div class="${styles["description-container"]}">
-            <label>Descripción del lenguaje</label>
+            <label>Descripción del modulo</label>
         </div>
         <div class="${styles["action-buttons"]}">
             <button type="submit">Publicar</button>
@@ -50,7 +47,7 @@ export function CreateLangScene(params) {
             modules: {
                 toolbar: '#toolbar-container',
             },
-            placeholder: 'Crea tu mejor lenguaje aquí...',
+            placeholder: 'Crea tu mejor modulo aquí...',
             theme: 'snow',
             // modules: {
             //     formula: true,
@@ -58,41 +55,39 @@ export function CreateLangScene(params) {
         });
         
         // Listener para manejar la publicación del contenido, o sea, enviar a base de datos.
-        document.querySelector('#create-language-form')
+        document.querySelector('#create-module-form')
             .addEventListener('submit', async (e) => {
                 // Evita que el formulario se envíe
                 e.preventDefault();
                 // Valida que el título y la descripción no estén vacíos
                 const titleValue = document.querySelector('#title').value;
-                const imgUrlValue = document.querySelector('#img-url').value;
 
                 const descriptionValue = document.querySelector('#description').value;
                 if (!titleValue) {
-                    alert('Por favor, ingresa un título para tu lenguaje');
+                    alert('Por favor, ingresa un título para tu modulo');
                     return;
                 }
                 if (!descriptionValue) {
-                    alert('Por favor, ingresa una descripción para tu lenguaje');
+                    alert('Por favor, ingresa una descripción para tu modulo');
                     return;
                 }
                 persistContent(quill);
                 if (!localStorage.getItem('quillContent')) {
-                    alert('Por favor, ingresa una descripción para tu lenguaje');
+                    alert('Por favor, ingresa una descripción para tu modulo');
                     return;
                 }
-                if (confirm("¿Estás seguro de que deseas publicar el lenguaje?")) {
+                if (confirm("¿Estás seguro de que deseas publicar el modulo?")) {
                     // Aquí va la lógica para enviar el contenido a la base de datos
                     try {
-                        const routeID = params.get('routeID')
-                        console.log('RouteID :' ,routeID);
+                        const langID = params.get('langID')
+                        console.log('langID :' ,langID);
                         const data = {
                             name: titleValue,
                             content: localStorage.getItem('quillContent'),
                             description: descriptionValue,
-                            id_route: routeID,
-                            language_img: imgUrlValue       
+                            id_language: langID,    
                         }
-                        const response = await fetchApi('http://localhost:4000/api/priv/languages', {
+                        const response = await fetchApi('http://localhost:4000/api/priv/modules', {
                             method: 'POST',
                             body: JSON.stringify(data),
                             headers: {
@@ -101,12 +96,12 @@ export function CreateLangScene(params) {
                             }
                         });
                         console.log(response);
-                        alert('Lenguaje publicado con éxito');
-                        document.querySelector('#create-language-form').reset(); // Resetea el formulario
-                        navigateTo(`/dashboard/learning-paths/languages?pathID=${routeID}`);
+                        alert('Modulo publicado con éxito');
+                        document.querySelector('#create-module-form').reset(); // Resetea el formulario
+                        navigateTo(`/dashboard/learning-paths/languages/modules?langID=${langID}`);
                     } catch (error) {
-                        alert('Ha ocurrido un error al publicar el lenguaje. Por favor, inténtalo de nuevo más tarde.');
-                        console.error('Error al publicar el lenguaje:', error);
+                        alert('Ha ocurrido un error al publicar el modulo. Por favor, inténtalo de nuevo más tarde.');
+                        console.error('Error al publicar el modulo:', error);
                     }
                 }
             });

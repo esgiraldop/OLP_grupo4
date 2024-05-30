@@ -8,6 +8,7 @@
     ), url(https://cdn.pixabay.com/photo/2024/04/09/02/22/ai-generated-8684845_1280.png) no-repeat;
     background-size: cover;
     background-position: center center;
+    overflow: auto;
 }
 
 .title{

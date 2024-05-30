@@ -56,10 +56,10 @@ export function languagesScene(params) {
             });
 
             // Evento de editar languages
-            const $buttonEditLang = document.getElementById("editlang");
-            $buttonEditLang.addEventListener("click", () => {
-                navigateTo(`/dashboard/learning-paths/languages/edit`);
-            });
+            // const $buttonEditLang = document.getElementById("editlang");
+            // $buttonEditLang.addEventListener("click", () => {
+            //     navigateTo(`/dashboard/learning-paths/languages/edit`);
+            // });
         }
     };
     return {

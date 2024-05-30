@@ -16,9 +16,11 @@ import { GameScene } from '../scenes/private/games/games';
 import { ProfileScene } from '../scenes/private/profile/profile';
 import { PostScene } from '../scenes/private/posts/posts';
 import { ChallengeScene_nico, CreateChallengeScene_nico } from '../scenes/private/challenges_nico';
-import { ModuleCreateScene_nico } from '../scenes/private/modules_nico/module-create';
+// import { ModuleCreateScene_nico } from '../scenes/private/modules_nico/module-create';
 import { CreatePathScene } from '../scenes/private/createpaths/'
 import { CreateLangScene } from '../scenes/private/createlangs'
+import { CreateModuleScene } from '../scenes/private/createmodules'
+import { CreateChalgScene } from '../scenes/private/createchalgs'
 import { AboutUsPage } from '../scenes/public/about-us/about-us';
 import { publicHome } from '../scenes/public/publicHome/publicHome';
 import { contact } from '../scenes/public/contact/contact';
@@ -38,7 +40,9 @@ export const routes = {
         { path: '/dashboard/learning-paths/languages', component: languagesScene},
         { path: '/dashboard/learning-paths/languages/create', component: CreateLangScene },
         { path: '/dashboard/learning-paths/languages/modules', component: modulesScene},
+        { path: '/dashboard/learning-paths/languages/modules/create', component: CreateModuleScene },
         { path: '/dashboard/learning-paths/languages/modules/challenges',component: challengesScene },
+        { path: '/dashboard/learning-paths/languages/modules/challenges/create', component: CreateChalgScene },
         { path: '/dashboard/games', component: GameScene },
         { path: '/dashboard/profile', component: ProfileScene },
         { path: '/dashboard/posts', component: PostScene },
