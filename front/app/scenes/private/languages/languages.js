@@ -52,7 +52,7 @@ export function languagesScene(params) {
             // Evento de crear new language
             const $buttonLang = document.getElementById("createlang");
             $buttonLang.addEventListener("click", () => {
-                navigateTo(`/dashboard/learning-paths/languages/create/?routeID=${routeID}`);
+                navigateTo(`/dashboard/learning-paths/languages/create?routeID=${routeID}`);
             });
 
             // Evento de editar languages

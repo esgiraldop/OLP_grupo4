@@ -9,6 +9,9 @@
     padding-top: 20px;
 }
 
+.img-url{
+    color: white;
+}
 
 .card {
     flex: 0 0 calc((33.333% - 100%)/var(--spacing-3));
