@@ -10,7 +10,7 @@ export function CreateLangScene(params) {
     const editorContent = `<div id="editor" class="${styles.editor}"></div>`
     const pageContent = `
     <h1 class="${styles["title"]}">Crear un nuevo lenguaje</h1>
-    <form id="create-language-form">
+    <form class="${styles["create-language-form"]}" id="create-language-form">
         <div class="${styles["language_title-container"]}">
             <label for="title">Título</label>
             <input type="text" id="title" name="title" class="${styles["language_title-input"]}">
@@ -20,15 +20,15 @@ export function CreateLangScene(params) {
             <textarea id="description" name="description" class="${styles["language_description-input"]}"></textarea>
         </div>
         
+        <div class="${styles["img-url"]}">
+        <label>Insertar URL de la imagen</label>
+        <input id = "img-url"  type="text">
         <div class="${styles["description-container"]}">
             <label>Descripción del lenguaje</label>
         </div>
-        <div class="${styles["img-url"]}">
-            <label>Insertar URL de la imagen</label>
-            <input id = "img-url"  type="text">
-            <div class="${styles["action-buttons"]}">
-                <button type="submit">Publicar</button>
-            </div>
+        <div class="${styles["action-buttons"]}">
+            <button type="submit">Publicar</button>
+        </div>
         </div>
             ${ToolbarContainer()}
             ${editorContent}

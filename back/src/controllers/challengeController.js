@@ -28,8 +28,9 @@ exports.getByModuleId = async (req, res) => {
 
 exports.addChallenge = async (req, res) => {
   try{
-    const { title, content, description, score_points, minimum_lvl, id_section } = req.body;
-    module = await addChallenge(title, content, description, score_points, minimum_lvl, id_section)
+    const { title, content, description, score_points, minimum_lvl, id_module } = req.body;
+    module = await addChallenge(title, content, description, score_points, minimum_lvl, id_module)
+    console.log(module);
     if(!module){
       return res.status(404).json({message: "Error when creating the challenge"})
     }

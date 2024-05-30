@@ -27,8 +27,8 @@ exports.getByLanguageId = async (req, res) => {
 
 exports.addModule = async (req, res) => {
   try{
-    const { name, description, id_route } = req.body;
-    module = await addModule(name, description, id_route)
+    const { name, description, id_language, content } = req.body;
+    module = await addModule(name, description, id_language, content)
     if(!module){
       return res.status(404).json({message: "Error when creating the module"})
     }
