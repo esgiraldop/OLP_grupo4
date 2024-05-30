@@ -70,8 +70,24 @@ export function HomeScene() {
 
                   </div>
               </div>
-          </div>
+          
          
+        </div>
+          <div class=${styles["card1-container"]}>
+          <div class=${styles["card1"]}>
+          <div class=${styles["front-content"]}>
+            <p>Hover me</p>
+          </div>
+          <div class=${styles["content"]}>
+            <p class=${styles["heading"]}>Card Hover</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipii
+              voluptas ten mollitia pariatur odit, ab
+              minus ratione adipisci accusamus vel est excepturi laboriosam magnam
+              necessitatibus dignissimos molestias.
+            </p>
+          </div>
+        </div>
         </div>
           <div class = ${styles["progress-container"]}>
             <div class=${styles["card-progress"]}>
@@ -80,6 +96,7 @@ export function HomeScene() {
             <div class=${styles["card-progress"]}>
               <p>Progreso Front</p>
             </div>
+          </div>
           </div>
         
         `;
