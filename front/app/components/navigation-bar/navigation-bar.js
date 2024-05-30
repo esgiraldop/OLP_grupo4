@@ -11,7 +11,7 @@ export function NavigationBar(
       <div class="${styles["logo-app-container"]}">
         <p>Singularity</p>
       </div>
-      <div>
+      <div class = "${styles.userLogo}">
         <p>${user}</p>
         <img src="${userImage}" alt="User image">
       </div>

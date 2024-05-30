@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: var(--spacing-2);
     background: linear-gradient(90deg, rgba(83,175,222,1) 43%, rgba(56,27,119,1) 90%);
@@ -25,6 +25,13 @@
     font-weight: 500;
     color: white;
 }
+
+.container > div.userLogo{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .logo-app-container p{
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #381b77, 0 0 30px #381b77, 0 0 40px #381b77, 0 0 55px #381b77, 0 0 75px #381b77, -40px -40px 0px rgba(206,89,55,0);
     color: white;
