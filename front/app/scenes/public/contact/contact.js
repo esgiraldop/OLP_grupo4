@@ -6,12 +6,12 @@ export function contact(){
 
     root.innerHTML=`
     <div>${RootScene()}</div>
-    <h1>This is our contact</h1>
-    <div class=${styles["stars"]}>
-        </div>
-            <div id=${styles["container-stars2"]}>
-                
-            <div id=${styles["stars"]}>
+    <div class="${styles["container"]}">
+        <div class="${styles["stars"]}"></div>
+                <div id="${styles["container-stars2"]}">
+                    <div id="${styles["stars"]}">
+                    </div>
+                </div>
         </div>
     </div>
     `
