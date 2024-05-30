@@ -87,10 +87,14 @@ export async function Router() {
 
   // Comprobar rutas públicas y privadas
   const publicRoute = routes.public.find((r) => r.path === path);
+  console.log("publicRoute: ", publicRoute)
+  console.log("hello from router.js")
   const privateRoute = routes.private.find((r) => r.path === path);
 
   if (publicRoute) {
+    console.log("publicRoute: ", publicRoute)
     publicRoute.component(params);
+    console.log("publicRoute: ", publicRoute)
   } else if (privateRoute) {
     checkAuth(path, params);
   } else {

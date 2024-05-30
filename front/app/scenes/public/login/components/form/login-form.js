@@ -51,7 +51,6 @@ async function login(email, password) {
       },
       body: JSON.stringify({ email, password }),
     });
-
     if (!response.ok) {
       const errorMessage = await response.text();
       throw new Error(`Error ${response.status}: ${errorMessage}`);
@@ -61,6 +60,7 @@ async function login(email, password) {
     return {token: data.token, userId: data.user.id};
   } catch (error) {
     console.error('Login failed:', error);
-    return null;
+    return ""
+    // return null; // Promises cannot return a null or an undefined
   }
 }
