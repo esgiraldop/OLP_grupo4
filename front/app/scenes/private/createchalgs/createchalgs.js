@@ -10,7 +10,7 @@ export function CreateChalgScene(params) {
   const editorContent = `<div id="editor" class="${styles.editor}"></div>`;
   const pageContent = `
     <h1 class="${styles["title"]}">Crear un nuevo reto</h1>
-    <form id="create-chalg-form">
+    <form class="${styles["create-chalg-form"]}" id="create-chalg-form">
         <div class="${styles["chalg_title-container"]}">
             <label for="title">Título</label>
             <input type="text" id="title" name="title" class="${
@@ -29,7 +29,6 @@ export function CreateChalgScene(params) {
         </div>
         <div class="${styles["action-buttons"]}">
             <button type="submit">Publicar</button>
-        </div>
         </div>
             ${ToolbarContainer()}
             ${editorContent}

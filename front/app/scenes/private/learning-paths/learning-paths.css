@@ -335,3 +335,14 @@ animation: textShine 5s ease-in-out infinite alternate;
   .btn-edit-path:hover {
     box-shadow: inset 0px 0px 100px #1479EA;
   }
+
+  /* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+  .btn-new-path {
+      bottom: -200px; /* Añadido */
+  }
+  .btn-edit-path {
+      bottom: -200px; /* Añadido */
+      right: 260px;
+  }
+}

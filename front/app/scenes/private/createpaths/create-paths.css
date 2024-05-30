@@ -9,6 +9,10 @@
     padding-top: 20px;
 }
 
+.create-path-form{
+    padding: 20px;
+}
+
 .card {
     flex: 0 0 calc((33.333% - 100%)/var(--spacing-3));
     background-color: rgb(219, 216, 216);
@@ -72,9 +76,7 @@
     gap: var(--spacing-3);
     margin-bottom: var(--spacing-1);
     margin-top: var(--spacing-3);
-    align-items: flex-start;
     flex-direction: column;
-
 }
 
 .path_title-input {

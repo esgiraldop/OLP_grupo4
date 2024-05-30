@@ -10,7 +10,7 @@ export function CreateModuleScene(params) {
     const editorContent = `<div id="editor" class="${styles.editor}"></div>`
     const pageContent = `
     <h1 class="${styles["title"]}">Crear un nuevo modulo</h1>
-    <form id="create-module-form">
+    <form   class="${styles["create-module-form"]}" id="create-module-form">
         <div class="${styles["module_title-container"]}">
             <label for="title">Título</label>
             <input type="text" id="title" name="title" class="${styles["module_title-input"]}">
@@ -25,7 +25,6 @@ export function CreateModuleScene(params) {
         </div>
         <div class="${styles["action-buttons"]}">
             <button type="submit">Publicar</button>
-        </div>
         </div>
             ${ToolbarContainer()}
             ${editorContent}
