@@ -2,15 +2,26 @@
     display: flex;
     margin-left: 50px;
   }
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
   
   .card {
     margin: 20px;
     width: 370px;
-    height: 500px;
+    height: 450px;
     background: transparent;
     backdrop-filter: blur(5px);
     border-radius: 15px;
     box-shadow: 1px 5px 60px 0px #100a886b;
+    .card-txt{
+        color: white;
+        text-align: center;
+        margin: 15px;
+        font-size: small;
+    }
   }
    
   .card .card-border-top {
