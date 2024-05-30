@@ -13,10 +13,10 @@ export function SidebarMenu(data = []) {
     if (path === item.href) {
       item.active = true;
     }
-  });
+  });//${styles["navMenu-visible"]}
 
   return `
-    <aside class="${styles["sidebar-menu"]}">
+    <aside id="sidebar-menu" class="${styles["sidebar-menu"]}">
         <div class="${styles["logo-app-container"]}">
           <p>Singularity</p>
         </div>
@@ -31,4 +31,5 @@ export function SidebarMenu(data = []) {
       
     </aside>
   `;
+
 }

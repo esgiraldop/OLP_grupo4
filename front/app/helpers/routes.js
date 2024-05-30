@@ -50,7 +50,7 @@ export const routes = {
         { path: '/dashboard/challenges/create', component: CreateChallengeScene_nico},
     ],
     public: [
-        { path: '/', component: RootScene },
+        { path: '/', component: publicHome },
         { path: '/login', component: LoginPage },
         { path: '/register', component: RegisterPage },
         { path: '/profile', component: ProfileScene },

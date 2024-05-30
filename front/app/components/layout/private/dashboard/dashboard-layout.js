@@ -31,8 +31,8 @@ export function DashboardLayout(pageContent, logic, footer, navbarData, sidebarD
   console.log("navbarData", navbarData)
 
   root.innerHTML = `
-  <div class="${styles.container}">
-    <div class="${styles.sidebar}">
+  <div id="container" class="${styles.container}">
+    <div id="sideBar" class="${styles.sidebar}">
       ${SidebarMenu(sidebarData)}
     </div>
     <div class="${styles.navbar}">
@@ -51,6 +51,15 @@ export function DashboardLayout(pageContent, logic, footer, navbarData, sidebarD
       navigateTo(href);
     });
   });
+    // const menuIcon = document.getElementById("menuIcon");
+    // const sideBarMenu = document.getElementById("container");
+    // console.log("menuicon",menuIcon);
+    // console.log("sideBarmenu",sideBarMenu);
 
+    // menuIcon.addEventListener("click", ()=>{
+    //   sideBarMenu.style.gridTemplateAreas = '"navbar" "main"';
+    // });
+  
   document.getElementById('logout').addEventListener('click', logOut)
 }
+//transition: left 0.3s;
