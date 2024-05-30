@@ -1,14 +1,21 @@
+// Importing Quill, a powerful, rich text editor
 import Quill from "quill"
-import 'quill/dist/quill.snow.css'; // para el tema bubble //TODO: This line was giving me errors
+// Importing the styles for the Quill snow theme
+import 'quill/dist/quill.snow.css';
+// Importing the ToolbarContainer component
 import { ToolbarContainer } from "./components/toolbar-container";
+// Importing the styles from the create-paths.css file
 import styles from './create-paths.css'
+// Importing the fetchApi helper function
 import { fetchApi } from "../../../helpers/fetch-api";
+// Importing the navigateTo function from the Router
 import { navigateTo } from "../../../Router";
 
-
+// Exporting the CreatePathScene function
 export function CreatePathScene() {
-    // Inicializa el contenedor HTML para el editor y un botón para guardar el contenido
+    // Initializing the HTML container for the editor and a button to save the content
     const editorContent = `<div id="editor" class="${styles.editor}"></div>`
+    // Initializing the HTML content for the page
     const pageContent = `
     <form class="${styles["create-path-form"]}" id="create-path-form">
         <div class="${styles["path_title-container"]}">
@@ -39,34 +46,30 @@ export function CreatePathScene() {
             ${editorContent}
             </form>
             `;
-            // <button id="saveButton" type="button">Guardar</button>
 
+    // Function to persist the content in local storage
     const persistContent = (quill) => {
-        const content = quill.getContents();  // Obtén el contenido como Delta
+        const content = quill.getContents();  // Get the content as Delta
         localStorage.setItem('quillContent', JSON.stringify(content));
     }
 
-    // Lógica para inicializar y configurar Quill
+    // Logic to initialize and configure Quill
     const logic = () => {
-        // Quill.register('modules/formula', MathQuillBlot);
-        // Espera a que el DOM esté completamente cargado
+        // Initialize Quill on the #editor element
         const quill = new Quill('#editor', {
             modules: {
                 toolbar: '#toolbar-container',
             },
             placeholder: 'Crea tu mejor ruta aquí...',
             theme: 'snow',
-            // modules: {
-            //     formula: true,
-            // }
         });
 
-        // Listener para manejar la publicación del contenido, o sea, enviar a base de datos.
+        // Event listener to handle the publication of the content, i.e., send to the database.
         document.querySelector('#create-path-form')
             .addEventListener('submit', async (e) => {
-                // Evita que el formulario se envíe
+                // Prevent the form from being submitted
                 e.preventDefault();
-                // Valida que el título y la descripción no estén vacíos
+                // Validate that the title and description are not empty
                 const titleValue = document.querySelector('#title').value;
                 const descriptionValue = document.querySelector('#description').value;
                 if (!titleValue) {
@@ -83,7 +86,7 @@ export function CreatePathScene() {
                     return;
                 }
                 if (confirm("¿Estás seguro de que deseas publicar la ruta?")) {
-                    // Aquí va la lógica para enviar el contenido a la base de datos
+                    // Here goes the logic to send the content to the database
                     try {
                         const data = {
                             name: titleValue,
@@ -95,12 +98,11 @@ export function CreatePathScene() {
                             body: JSON.stringify(data),
                             headers: {
                                 'Content-Type': 'application/json',
-                                // 'Authorization': `Bearer ${localStorage.getItem('token')}`
                             }
                         });
                         console.log(response);
                         alert('Ruta publicado con éxito');
-                        document.querySelector('#create-path-form').reset(); // Resetea el formulario
+                        document.querySelector('#create-path-form').reset(); // Reset the form
                         navigateTo('/dashboard/learning-paths');
                     } catch (error) {
                         alert('Ha ocurrido un error al publicar el ruta. Por favor, inténtalo de nuevo más tarde.');
@@ -109,6 +111,7 @@ export function CreatePathScene() {
                 }
             });
     }
+    // Returning an object with pageContent and logic
     return {
         pageContent,
         logic
