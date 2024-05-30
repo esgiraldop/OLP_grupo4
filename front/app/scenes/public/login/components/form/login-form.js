@@ -61,6 +61,6 @@ async function login(email, password) {
   } catch (error) {
     console.error('Login failed:', error);
     return ""
-    // return null; // Promises cannot return a null or an undefined
+    //return null; // Promises cannot return a null or an undefined
   }
 }
