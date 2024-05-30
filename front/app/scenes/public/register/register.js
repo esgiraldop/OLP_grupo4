@@ -8,18 +8,28 @@ export async function RegisterPage() {
     const root = document.getElementById('root');
 
     root.innerHTML = `
-    <main class=${styles.registerPage} style="background-image: url(${galaxia})">
+    <div class=${styles.registerPage} style="background-image: url(${galaxia})">
         <form class=${styles.form_register} id="form-register">
             <h4>Sign Up</h4>
-            <input class=${styles.controls} type="text" id="name" placeholder="Username" required>
-            <input class=${styles.controls} type="email" id="email" placeholder="Email" required>
-            <input class=${styles.controls} type="password" id="password" placeholder="Password" required>
+            <div class=${styles.input_container}>
+                <p class=${styles.label_name}>Enter your name:</p>
+                <input class=${styles.input} type="text" id="name" placeholder="Username" required>                
+            </div>
+            <div class=${styles.input_container}>
+                <span class=${styles.label_name}>Enter your email:</span>
+                <input class=${styles.input} type="email" id="email" placeholder="useremail@example.com" required>  
+            </div>
+            <div class=${styles.input_container}>
+                <span class=${styles.label_name}>Enter your password:</span>
+                <input class=${styles.input} type="password" id="password" placeholder="password" required>    
+            </div>
             <input type="submit" value="Sign Up" class=${styles.button}>
             <div class=${styles.login_link}>
                 <p>Already have an account?   <a href="./login">Login</a></p>
             </div>
+            <a class=${styles.btn_go_home} href="/home">Go To Home</a>
         </form>
-    </main>
+    </div>
     `;
 
 const $form = document.getElementById('form-register');

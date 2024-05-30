@@ -1,15 +1,20 @@
-.container {
-    height: 100%;
-    width: 100%;
-    color: white;
-    background: linear-gradient(
-      90deg,
-      rgba(89, 76, 138, 0.342) 50%,
-      rgba(18, 18, 18, 0.274) 100%
-    ),url(https://cdn.pixabay.com/photo/2016/01/02/11/01/stars-1118077_1280.jpg) no-repeat;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
+.dashboard-layout{
+  overflow: scroll;
+}
+#home_container {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;  
+      height: 100%;
+      width: 100%;
+  background: linear-gradient(
+        90deg,
+        rgba(89, 76, 138, 0.342) 50%,
+        rgba(18, 18, 18, 0.274) 100%
+      ),url(https://cdn.pixabay.com/photo/2016/01/02/11/01/stars-1118077_1280.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
 }
 
 .visible {
@@ -113,6 +118,14 @@
         opacity: 0.5;
     }
 }
+.pcc{
+  display:flex;
+  height: 70vh;
+  width: 100vw;
+  justify-content: center;
+  padding: 40px;
+
+}
 
 .star-field {
     position: relative;
@@ -152,21 +165,26 @@
 .star-field .layer:nth-child(3) {
     animation: sf-fly-by-3 5s linear infinite;
 }
-/* 160528
-381B77
-7748CD
-53AFDE */
+
 
 .myCard {
-    position: absolute;
-    margin-top: 50px;
-    margin-left: 400px;
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     background-color: transparent;
-    width: 290px;
-    height: 434px;
+    width: 250px;
+    height: 350px;
     perspective: 1000px;
   }
+  .myCard p {
+    word-wrap: break-word; 
+    overflow-wrap: anywhere;
+    hyphens: auto; 
+    text-align: center;
+    margin: 0; 
+    padding: 10px;
+    font-size: large;
+}
   
   .title {
     width: 100%;
@@ -186,7 +204,6 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
     background-size: 500% auto;
     animation: textShine 5s ease-in-out infinite alternate;
   }
@@ -450,3 +467,63 @@
     color:white;
     text-align:center;
  }
+/* carta progress box */
+.progress-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 30vh;
+  width: 100vw;
+  padding: 40px;
+
+}
+.card-progress {
+  width: 150px;
+  height: 150px;
+  background: hsl(214, 74%, 10%);
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card-progress p{
+  z-index: 1;
+  color: white;
+  font-size: 1em;
+}
+
+.card-progress::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-progress::after {
+  content: '';
+  position: absolute;
+  background: #07182E;
+  ;
+  inset: 5px;
+  border-radius: 15px;
+}  
+ .card-progress:hover:before {
+  background-image: linear-gradient(180deg, rgb(231, 98, 9), rgb(0, 0, 0));
+  animation: rotBGimg 3.5s linear infinite;
+} 

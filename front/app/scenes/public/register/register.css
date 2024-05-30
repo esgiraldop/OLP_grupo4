@@ -1,13 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
+::placeholder {
+    color: rgba(236, 230, 230, 0.418);
+}
+.input:focus {
+    outline: none;
+}
 .registerPage{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    height: 100vh;  /* cambiar a 100% cuando se integre el navbar*/
-    width: 100%;
+    height: 100vh;  
+    width: 100vw;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,45 +22,65 @@
     font-family: "Poppins", sans-serif;
 }
 .form_register{
-    width: 30%;
-    height: 60%;
+    width: 550px;
+    height: 70%;
     background: transparent;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(236, 230, 230, 0.418);
-    padding: 30px;
+    padding: 2%;
     border-radius: 15px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 .form_register h4{
-    font-size: 40px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-.controls{
-    width: 100%;
-    background: transparent;
-    padding: 10px;
-    border-radius: 40px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(236, 230, 230, 0.418);
-    font-size: 16px;
+    font-size: 55px;
+    margin-bottom: 4%;
     color: white;
 }
+.input_container{
+    width:100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.label_name{
+    color: white;
+    margin-left: 3%;
+}
+.input{
+    border-radius: 40px;
+    width: 100%;
+    height: 60%;
+    background: transparent;
+    font-size: medium;
+    color: white;
+    border: 2px solid rgba(236, 230, 230, 0.418);
+    padding-left: 3%;
+}
+.label_name{
+    color: white;
+    margin-left: 3%;
+}
 .login_link{   
-    margin: 25px auto;
     text-align: center;
     text-decoration: none;
     font-size: 12px;
+    width: 100%;
 }
 .login_link p{   
     color: white;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 15px;
 }
 .login_link a{
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
+    margin-left: 2%;
 }
 .login_link a:hover{
     text-decoration: underline;
@@ -65,14 +90,65 @@
     width: 100%;
     background: white;
     border: none;
-    padding: 12px;
+    margin-top: 4%;
+    padding: 2%;
     color: #05998b;
     border-radius: 40px;
-    font-size: 20px;
+    font-size: 25px;
     font-family: "Poppins", sans-serif;
 }
 .button:hover{
    cursor: pointer;
    background-color: #05998b;
    color: white;
+}
+.btn_go_home{
+    bottom: 30%;
+    right: 30%;
+    background-color: #05998b;
+    padding: 5px;
+    border-radius: 40px;
+    color: white;
+    text-decoration: none;
+}
+.btn_go_home:hover{
+    text-decoration: none;
+    background-color: white;
+    color: #05998b;
+}
+
+@media screen and  (max-width:1100px){
+    .form_register{
+        width: 40%;
+    }
+}
+@media screen and  (max-width:900px){
+    .form_register{
+        width: 60%;
+    }
+    .form_register h4{
+        margin-bottom: 20px; 
+    }
+}
+@media screen and  (max-width:760px){
+
+    .form_register h4{
+        font-size: 45px;
+        margin: 15px 0 5px 0;
+    }
+    .input_container{
+        height: 10%;
+    }
+    .label_name{
+        font-size: small;
+    }
+    .input{
+        font-size: small;   
+    }
+}
+@media screen and  (max-width:570px){
+    .form_register h4{
+        font-size: 35px;
+        margin: 10px 0 3px 0;
+    }
 }

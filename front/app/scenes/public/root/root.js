@@ -89,31 +89,10 @@ export function RootScene (pageContent,logic) {
         </header>
     `;
 
-/*     const hero = `
-      <main id="publicContent"></main>
-          
-      <div class=${styles["stars"]}>
-      <div id=${styles["title"]}>
-          <span>SINGULARITY</span>
-          <br>
-      </div>
-      </div>
-      <div id=${styles["container-stars2"]}>
-      
-      <div id=${styles["stars"]}>
-      </div>
-      </div>
-    `; */
-
     root.innerHTML = `
         ${header}
         ${pageContent}
     `;
 
-    const button = document.getElementById('btn-login');
-    button.addEventListener('click', () => {
-        navigateTo('/login');
-    });
     return header
-
 }

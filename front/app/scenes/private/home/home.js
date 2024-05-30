@@ -12,16 +12,13 @@ export function HomeScene() {
 
   const pageContent = `
   <div class="${styles.container}" id="home_container">
-    <!--    <h2>Home vision</h2>-->
-    <!--    <p>Welcome to the home view.</p>-->
-    <!-- Starfield moving background -->
     <div class="${styles["star-field"]}">
     <div class="${styles.layer}"></div>
     <div class="${styles.layer}"></div>
     <div class="${styles.layer}"></div>
     <div style="border: 2px red solid margin: 0 auto" id="user-info"></div>
     ${footer}
-  </div>
+  
   <div class="${styles.loader}" id="loader">
   </div>
  
@@ -48,30 +45,43 @@ export function HomeScene() {
       )
       .then( user => {
         const userInfo = document.getElementById('user-info');
-        userInfo.innerHTML = `
-        <div class=${styles["myCard"]}>
-        <div class=${styles["innerCard"]}>
-            <div class=${styles["frontSide"]}>
-                <p class=${styles["title"]}>User: ${user.username}</p>
-                <p>${user.email}</p>
-            </div>
-            <div class=${styles["backSide"]}>
-                <p class=${styles["title"]}>points <br> ${user.points}</p>
-                <button class=${styles["btn"]} type=${styles["button"]}>
-                    <strong>SPACE</strong>
-                    <div id=${styles["container-stars"]}>
-                      <div id=${styles["stars"]}></div>
-                    </div>
+        userInfo.innerHTML = 
+        `
+          <div class=${styles["pcc"]}>
+            <div class=${styles["myCard"]}>
+              <div class=${styles["innerCard"]}>
+                <div class=${styles["frontSide"]}>
+                    <p class=${styles["title"]}>User: ${user.username}</p>
+                    <p>${user.email}</p>
+                </div>
+                  <div class=${styles["backSide"]}>
+                      <p class=${styles["title"]}>points <br> ${user.points}</p>
+                      <button class=${styles["btn"]} type=${styles["button"]}>
+                          <strong>SPACE</strong>
+                          <div id=${styles["container-stars"]}>
+                            <div id=${styles["stars"]}></div>
+                          </div>
 
-                    <div id=${styles["glow"]}>
-                      <div class=${styles["circle"]}></div>
-                      <div class=${styles["circle"]}></div>
-                    </div>
-                  </button>
+                          <div id=${styles["glow"]}>
+                            <div class=${styles["circle"]}></div>
+                            <div class=${styles["circle"]}></div>
+                          </div>
+                        </button>
 
-            </div>
+                  </div>
+              </div>
+          </div>
+         
         </div>
-    </div>
+          <div class = ${styles["progress-container"]}>
+            <div class=${styles["card-progress"]}>
+              <p>Progreso Back</p>
+            </div>
+            <div class=${styles["card-progress"]}>
+              <p>Progreso Front</p>
+            </div>
+          </div>
+        
         `;
         // Finalmente, ocultamos el loader y mostramos el div
         document.querySelector(`#loader`).classList.add(styles.hidden);

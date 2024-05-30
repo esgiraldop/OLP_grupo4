@@ -26,8 +26,8 @@ exports.getById = async (req, res) => {
 
 exports.addLanguage = async (req, res) => {
   try{
-    const { name, description, content, id_route } = req.body;
-    language = await addLanguage(name, description, content, id_route)
+    const { name, description, content, id_route,language_img } = req.body;
+    language = await addLanguage(name, description, content, id_route,language_img)
     if(!language){
       return res.status(404).json({message: "Error when creating the language"})
     }
