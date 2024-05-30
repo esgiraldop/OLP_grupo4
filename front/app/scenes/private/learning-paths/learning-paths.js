@@ -1,32 +1,35 @@
+// Importing the navigateTo function from the Router
 import { navigateTo } from "../../../Router";
-// Importa los estilos CSS para este componente
+// Importing the styles from the learning-paths.css file
 import styles from "./learning-paths.css";
 
-// Define y exporta la función PathScene
+// Exporting the PathScene function
 export function PathScene() {
-  // Define el contenido de la página como una cadena de texto HTML
+  // Initializing pageContent with the HTML structure for the page
   let pageContent = `
     <div class="${styles.container}">
     <div id="paths-container"></div>
     <div id="loader" class="${styles.loader}"></div>
     </div>
     `;
-  // Define la lógica que se ejecutará cuando se cargue la página
+
+  // Defining the logic function that will be executed when the page loads
   let logic = async () => {
+    // Getting the paths-container element
     const $myContent = document.getElementById("paths-container");
-    // const response = await fetch ('http://localhost:3000/learningPaths');
+    // Fetching the routes data from the API
     const response = await fetch("http://localhost:4000/api/priv/routes");
+    // Parsing the response data to JSON
     const learningPaths = await response.json();
 
+    // Adding the hide-loader class to the loader element
     document.getElementById('loader').classList.add(styles["hide-loader"])
 
-    // Pinto en el DOM
+    // Setting the innerHTML for the paths-container element
     $myContent.innerHTML = `
     <h2 id="h2-title" class="${styles.title}">Welcome! These are the learning paths you can choose</h2>
-        <button class="${styles["btn-new-path"]
-      }" id="createpath">Create new path</button>
-        <button class="${styles["btn-edit-path"]
-      }" id="editpath">Edit paths</button>
+        <button class="${styles["btn-new-path"]}" id="createpath">Create new path</button>
+        <button class="${styles["btn-edit-path"]}" id="editpath">Edit paths</button>
             <div class="${styles["card-container"]}">
             ${learningPaths
         .map((path) => `
@@ -40,28 +43,31 @@ export function PathScene() {
                  <div class="${styles.layer}"></div>
                  <div class="${styles.layer}"></div>
                 `;
-    //Evento
-    // Obtiene todos los elementos 'button' en el documento
+
+    // Getting all the button elements inside div#route-card
     const buttons = document.querySelectorAll("div#route-card>button");
-    // Convierte la colección HTML de botones en un array
+    // Converting the buttons NodeList to an array
     const buttonsArray = [...buttons];
-    // Recorre cada botón en el array
+    // Adding a click event listener to each button in the buttonsArray
     buttonsArray.forEach(
-      // Para cada botón...
+      // For each button...
       ($singleButton) =>
-        // Añade un event listener 'click' al botón
+        // Add a click event listener to the button
         $singleButton.addEventListener("click", (e) =>
-          // Cuando se hace click en el botón, navega a la URL especificada
-          // Incluye el id del botón como un parámetro de consulta en la URL
+          // When the button is clicked, navigate to the specified URL
+          // Include the id of the button as a query parameter in the URL
           navigateTo(
             `/dashboard/learning-paths/languages?pathID=${e.target.id}`)));
 
-    //Evento de crear new path
+    // Getting the createpath element
     const $buttonPath = document.getElementById("createpath");
+    // Adding a click event listener to the createpath button
     $buttonPath.addEventListener("click", () => {
+      // When the button is clicked, navigate to the create path page
       navigateTo(`/dashboard/learning-paths/create`);
     });
   };
+  // Returning an object with pageContent and logic
   return {
     pageContent,
     logic,

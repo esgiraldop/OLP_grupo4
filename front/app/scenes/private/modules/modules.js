@@ -1,12 +1,20 @@
+// Importing the styles from the modules.css file
 import styles from "./modules.css";
+// Importing the navigateTo function from the Router
 import { navigateTo } from "../../../Router";
 
+// Exporting the modulesScene function which takes params as an argument
 export function modulesScene(params) {
+    // Initializing pageContent as an empty string
     let pageContent = ``;
+    // Initializing logic as an async function
     let logic = async () => { };
 
+    // Checking if langID exists in params
     if (params.get("langID")) {
+        // Getting langID from params
         const langID = params.get("langID");
+        // Setting the HTML content for pageContent
         pageContent = `
         <div class="${styles.container}">
             <div id="mods-container">
@@ -19,17 +27,19 @@ export function modulesScene(params) {
         </div>
         `;
 
+        // Defining the logic function
         logic = async () => {
+            // Getting the mods-container element
             const $modsContainer = document.getElementById("mods-container");
-            // const resp = await fetch(`http://localhost:3000/modules?courseId=${courseId}`)
-            const resp = await fetch(
-                `http://localhost:4000/api/priv/modules/${langID}`
-            );
+            // Fetching the modules data from the API
+            const resp = await fetch(`http://localhost:4000/api/priv/modules/${langID}`);
+            // Parsing the response data to JSON
             const modArray = await resp.json();
 
+            // Adding the hide-loader class to the loader element
             document.getElementById("loader").classList.add(styles["hide-loader"]);
 
-            // Pinto en el DOM
+            // Setting the innerHTML for the mods-container element
             $modsContainer.innerHTML = `
         <div class="${styles["img-container"]}">
             <h2 class=${styles["title"]
@@ -51,11 +61,9 @@ export function modulesScene(params) {
         </div>
         `;
 
-            // Agrego los elementos del servidor a los contenedores de desafíos
+            // Adding the server elements to the challenge containers
             modArray.forEach((elem, index) => {
-                const challengeContainer = document.getElementById(
-                    `challenge${index + 1}`
-                );
+                const challengeContainer = document.getElementById(`challenge${index + 1}`);
                 if (challengeContainer) {
                     challengeContainer.innerHTML = `
                     <div class="${styles["img-challenge-container"]}">
@@ -65,7 +73,7 @@ export function modulesScene(params) {
                     `;
                 }
             });
-            //Adding an event listener to evey language
+            // Adding an event listener to every language
             const buttons = document.getElementsByClassName(styles["img-challenge"]);
             const buttonsArray = [...buttons];
             buttonsArray.forEach(($elem) =>
@@ -75,7 +83,7 @@ export function modulesScene(params) {
                     );
                 })
             );
-            // Evento de crear new module
+            // Event to create a new module
             const $buttonMod = document.getElementById("createmodule");
             $buttonMod.addEventListener("click", () => {
                 navigateTo(
@@ -85,5 +93,6 @@ export function modulesScene(params) {
         };
     }
 
+    // Returning an object with pageContent and logic
     return { pageContent, logic };
 }
