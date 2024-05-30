@@ -47,39 +47,41 @@ export function HomeScene() {
         const userInfo = document.getElementById('user-info');
         userInfo.innerHTML = 
         `
-          
-          <div class=${styles["myCard"]}>
-            <div class=${styles["innerCard"]}>
-              <div class=${styles["frontSide"]}>
-                  <p class=${styles["title"]}>User: ${user.username}</p>
-                  <p>${user.email}</p>
-              </div>
-              <div class=${styles["backSide"]}>
-                  <p class=${styles["title"]}>points <br> ${user.points}</p>
-                  <button class=${styles["btn"]} type=${styles["button"]}>
-                      <strong>SPACE</strong>
-                      <div id=${styles["container-stars"]}>
-                        <div id=${styles["stars"]}></div>
-                      </div>
+          <div class=${styles["pcc"]}>
+            <div class=${styles["myCard"]}>
+              <div class=${styles["innerCard"]}>
+                <div class=${styles["frontSide"]}>
+                    <p class=${styles["title"]}>User: ${user.username}</p>
+                    <p>${user.email}</p>
+                </div>
+                  <div class=${styles["backSide"]}>
+                      <p class=${styles["title"]}>points <br> ${user.points}</p>
+                      <button class=${styles["btn"]} type=${styles["button"]}>
+                          <strong>SPACE</strong>
+                          <div id=${styles["container-stars"]}>
+                            <div id=${styles["stars"]}></div>
+                          </div>
 
-                      <div id=${styles["glow"]}>
-                        <div class=${styles["circle"]}></div>
-                        <div class=${styles["circle"]}></div>
-                      </div>
-                    </button>
+                          <div id=${styles["glow"]}>
+                            <div class=${styles["circle"]}></div>
+                            <div class=${styles["circle"]}></div>
+                          </div>
+                        </button>
 
+                  </div>
               </div>
           </div>
-      </div>
-        <div class = ${styles["progress-container"]}>
-          <div class=${styles["card-progress"]}>
-            <p>Progreso front</p>
-          </div>
-          <div class=${styles["card-progress"]}>
-            <p>Progreso front</p>
-          </div>
+         
         </div>
-        </div>
+          <div class = ${styles["progress-container"]}>
+            <div class=${styles["card-progress"]}>
+              <p>Progreso Back</p>
+            </div>
+            <div class=${styles["card-progress"]}>
+              <p>Progreso Front</p>
+            </div>
+          </div>
+        
         `;
         // Finalmente, ocultamos el loader y mostramos el div
         document.querySelector(`#loader`).classList.add(styles.hidden);
