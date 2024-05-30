@@ -59,7 +59,20 @@ export function shopScene(){
                         console.log("accessory: ", accessory)
                         if(user){
                             // Inserting the new accessory in usrInfoInnerHTML
-                            console.log("Holaaaaaa")
+                            const newCard = document.createElement('div');
+                            newCard.className = styles["card-container"];
+                            newCard.innerHTML = `
+                                <div class="${styles.card} ${styles.space_around}" id="accesory-card">
+                                    <figure class="${styles.card_elem} ${styles.figure}">
+                                        <img src="${accessory.url}">
+                                    </figure>
+                                    <div class="${styles.card_elem} ${styles.title_card}">
+                                        <h3>${accessory.name}</h3>
+                                    </div>
+                                </div>
+                            `;
+                            // Append the new accessory card to the usrInfoContainer
+                            $usrInfoContainer.appendChild(newCard);
                         }
                     }
                 )
