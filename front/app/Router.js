@@ -59,12 +59,12 @@ async function checkAuth(path, params) {
         navigateTo('/dashboard'); // Redirigir a dashboard si la ruta privada no existe
       }
     } else {
-      // Token no válido, redirigir a login
-      navigateTo('/login');
+      // Token no válido, redirigir a home
+      navigateTo('/home');
     }
   } else {
-    // Si no hay token, redirigir a login
-    navigateTo('/login');
+    // Si no hay token, redirigir a home
+    navigateTo('/home');
   }
 }
 
@@ -95,7 +95,7 @@ export async function Router() {
     checkAuth(path, params);
   } else {
     console.warn('Ruta no encontrada:', path);
-    navigateTo('/login');
+    navigateTo('/home');
   }
 }
 
