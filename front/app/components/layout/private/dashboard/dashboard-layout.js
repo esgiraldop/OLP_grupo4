@@ -28,7 +28,6 @@ export function DashboardLayout(pageContent, logic, footer, navbarData, sidebarD
   //   user: 'Nicolas Picon',
   //   userImage: 'https://randomuser.me/api/portraits/men/75.jpg',
   // };
-  console.log("navbarData", navbarData)
 
   root.innerHTML = `
   <div id="container" class="${styles.container}">

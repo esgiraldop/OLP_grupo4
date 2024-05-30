@@ -35,7 +35,7 @@ export function languagesScene(params) {
             <button class="${styles['btn-edit-lang']}" id="editlang">Edit languages</button>
             <div class="${styles["img-container"]}">
                 ${langArray.map(elem => `
-                    <div id="lang-img"> 
+                    <div id="lang-img" class="${styles['img-box']}"> 
                         <img id=${elem.id} class="${styles.img}" src="${elem.language_img}"></img>  
                     </div>
                 `).join('')}

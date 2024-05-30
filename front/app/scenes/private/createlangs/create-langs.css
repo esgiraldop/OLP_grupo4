@@ -4,9 +4,14 @@
     flex-wrap: wrap;
 }
 
+.create-language-form{
+    padding: 20px;
+}
+
 .title{
     text-align:center ;
     padding-top: 20px;
+    color: white;
 }
 
 .img-url{
@@ -78,7 +83,6 @@
     margin-top: var(--spacing-3);
     align-items: flex-start;
     flex-direction: column;
-
 }
 
 .language_title-input {
@@ -86,12 +90,13 @@
     padding: var(--spacing-2);
     border: 1px solid var(--color-primary);
     border-radius: var(--border-radius);
+    
 }
 
 .editor {
     color: white;
     height: 70vh !important; /* o cualquier altura que desees */
-    /* Agregar otras propiedades si es necesario */
+    /* Agregar otras propiedades si es necesario */  
 }
 
 

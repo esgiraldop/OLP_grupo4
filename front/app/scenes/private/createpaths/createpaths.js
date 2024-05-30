@@ -10,7 +10,7 @@ export function CreatePathScene() {
     // Inicializa el contenedor HTML para el editor y un botón para guardar el contenido
     const editorContent = `<div id="editor" class="${styles.editor}"></div>`
     const pageContent = `
-    <form id="create-path-form">
+    <form class="${styles["create-path-form"]}" id="create-path-form">
         <div class="${styles["path_title-container"]}">
     <!-- Starfield animation -->
     <div class="${styles["star-field"]}">

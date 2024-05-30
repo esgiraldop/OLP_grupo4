@@ -10,7 +10,7 @@ export function CreateLangScene(params) {
     const editorContent = `<div id="editor" class="${styles.editor}"></div>`
     const pageContent = `
     <h1 class="${styles["title"]}">Crear un nuevo lenguaje</h1>
-    <form id="create-language-form">
+    <form class="${styles["create-language-form"]}" id="create-language-form">
         <div class="${styles["language_title-container"]}">
             <label for="title">Título</label>
             <input type="text" id="title" name="title" class="${styles["language_title-input"]}">
