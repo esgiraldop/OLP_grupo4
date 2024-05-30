@@ -17,7 +17,7 @@ export function HomeScene() {
       <div class="${styles.layer}"></div>
       <div class="${styles.layer}"></div>
      
-      <div style="border: 2px red solid; margin: 0 auto" id="user-info"></div>
+      <div  margin: 0 auto" id="user-info"></div>
       ${footer}
       <div class="${styles.loader}" id="loader"></div>
     </div>
