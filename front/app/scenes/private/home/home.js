@@ -5,7 +5,7 @@ export function HomeScene() {
 
   // generate random number between 1 an 10
   // const randomNumber = Math.floor(Math.random() * 10) + 1;
-
+    console.log("all good from home")
   const footer = `
   <!-- <footer><p>All rights reserved.</p></footer> -->
   `;
@@ -16,11 +16,12 @@ export function HomeScene() {
       <div class="${styles.layer}"></div>
       <div class="${styles.layer}"></div>
       <div class="${styles.layer}"></div>
+     
       <div style="border: 2px red solid; margin: 0 auto" id="user-info"></div>
       ${footer}
       <div class="${styles.loader}" id="loader"></div>
     </div>
-  </div>
+    </div>
   `;
 
   const logic = () => {
@@ -61,29 +62,31 @@ export function HomeScene() {
       const userInfo = document.getElementById('user-info');
       userInfo.innerHTML = `
         <div class=${styles["pcc"]}>
-          <div class=${styles["myCard"]}>
-            <div class=${styles["innerCard"]}>
-              <div class=${styles["frontSide"]}>
-                <figure>
-                  <img src="${data[0].avatar_img}">
-                </figure>
-                <p class=${styles["title"]}>User: ${data[0].username}</p>
-                <p>${data[0].email}</p>
-              </div>
-              <div class=${styles["backSide"]}>
-                <p class=${styles["title"]}>Points <br> ${data[0].points}</p>
-                <button class=${styles["btn"]} type="button">
-                  <strong>SPACE</strong>
-                  <div id=${styles["container-stars"]}>
-                    <div id=${styles["stars"]}></div>
+          <div class=${styles["mycardContainer"]}>
+              <div class=${styles["myCard"]}>
+                <div class=${styles["innerCard"]}>
+                  <div class=${styles["frontSide"]}>
+                    <figure>
+                      <img src="${data[0].avatar_img}">
+                    </figure>
+                    <p class=${styles["title"]}>User: ${data[0].username}</p>
+                    <p>${data[0].email}</p>
                   </div>
-                  <div id=${styles["glow"]}>
-                    <div class=${styles["circle"]}></div>
-                    <div class=${styles["circle"]}></div>
+                  <div class=${styles["backSide"]}>
+                    <p class=${styles["title"]}>Points <br> ${data[0].points}</p>
+                    <button class=${styles["btn"]} type="button">
+                      <strong>SPACE</strong>
+                      <div id=${styles["container-stars"]}>
+                        <div id=${styles["stars"]}></div>
+                      </div>
+                      <div id=${styles["glow"]}>
+                        <div class=${styles["circle"]}></div>
+                        <div class=${styles["circle"]}></div>
+                      </div>
+                    </button>
                   </div>
-                </button>
+                </div>
               </div>
-            </div>
           </div>
           <div class=${styles["card1-container"]}>
             <div class=${styles["card1"]}>

@@ -126,7 +126,7 @@
   justify-content: center;
   gap: 20px ;
   position:absolute;
-  width: 100vw;
+  width: 100%;
 
 }
 
@@ -138,7 +138,7 @@
     height: 100%;
     perspective: 600px;
     -webkit-perspective: 600px;
-    /* z-index: -1; */
+    
 }
 .star-field .layer {
     box-shadow: -411px -476px #cccccc, 777px -407px #d4d4d4, -387px -477px #fcfcfc, -91px -235px #d4d4d4, 491px -460px #f7f7f7, 892px -128px #f7f7f7, 758px -277px #ededed, 596px 378px #cccccc, 647px 423px whitesmoke, 183px 389px #c7c7c7,
@@ -158,6 +158,7 @@
     height: 4px;
     width: 4px;
     border-radius: 2px;
+    
 }
 .star-field .layer:nth-child(1) {
     animation: sf-fly-by-1 5s linear infinite;
@@ -169,7 +170,14 @@
     animation: sf-fly-by-3 5s linear infinite;
 }
 
-
+.mycardContainer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+  grid-column: 1;
+  grid-row: 1/3;  
+}
 .myCard {
     display: flex;
     flex-direction: column;
@@ -178,8 +186,7 @@
     width: 250px;
     height: 350px;
     perspective: 1000px;
-    grid-column: 1/3;
-    grid-row: 1/2;
+  
     margin: 10px;
     margin-left: 200px;
   }
@@ -478,12 +485,15 @@
 .progress-container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  height: 30vh;
+  justify-content: start;
+  height: 200px;
   grid-column: 1/3;
-  grid-row: 2/4;
+  grid-row: 3/5;
   gap:10px;
-  
+  margin-left: 20px;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
 
 }
 .card-progress {
@@ -541,7 +551,7 @@
 /* CARTA RETOS   */
 .card1-container {
   width: 250px;
-  height: 550px;
+  height: 600px;
   position: absolute;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);

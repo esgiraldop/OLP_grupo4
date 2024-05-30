@@ -202,7 +202,7 @@ animation: textShine 5s ease-in-out infinite alternate;
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     width: 12rem;
@@ -217,6 +217,10 @@ animation: textShine 5s ease-in-out infinite alternate;
     margin-bottom: 20px;
     padding: 1rem;
   }
+
+.card.space_around{
+    justify-content: space-around;
+}
 
   @keyframes shadowAnimation {
     0%, 100% {
@@ -265,6 +269,77 @@ animation: textShine 5s ease-in-out infinite alternate;
   .card:hover::after {
     opacity: 1;
   }
+
+/* Elements within the card in the shop */
+.card-container > .card > .card_elem{
+    /*border: red 2px solid;*/
+}
+
+.card-container > .card > .card_elem.figure{
+    /*border: mediumpurple 3px solid;*/
+    width: 80%;
+    height: 50%;
+    border-radius: 0px;
+    margin: 1rem;
+    padding: 0;
+}
+
+.card-container > .card > .card_elem.title_card{
+    flex-basis: 1rem;
+}
+
+
+.card-container > .card > .card_elem.figure > img{
+    width: 100%;
+    height: 100%;
+    /*border: orange 3px solid;*/
+    overflow: hidden;
+    object-fit: cover;
+    display: block;
+}
+
+.card-container > .card > .card_elem.buy{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    /*border: 2px black solid;*/
+    flex-direction: row;
+    gap: 30px
+}
+
+.card-container > .card > .card_elem.buy > .buy_element{
+    /*flex: 0 0 calc((90% - 0px)/2);*/
+    /*border: 2px green solid;*/
+}
+
+.card-container > .card > .card_elem.buy > .buy_element.req_points{
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+    height: 2rem;
+    /*border: 2px white solid;*/
+}
+
+.card-container > .card > .card_elem.buy > .buy_element.buy_bttn{
+    width: 50%;
+    text-align: right;
+}
+
+.card-container > .card > .card_elem.buy > .buy_element.req_points > figure{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.card-container > .card > .card_elem.buy > .buy_element.req_points > figure > img{
+    object-fit: cover;
+    overflow: hidden;
+}
 
   .btn-course{
     width: 100%;
@@ -350,7 +425,7 @@ animation: textShine 5s ease-in-out infinite alternate;
 .shop_container_elem {
     /*border: red solid 2px;*/
     overflow: scroll;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     position: relative;
 }
 
