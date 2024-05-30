@@ -14,7 +14,7 @@ exports.getAll = async () => {
 
 exports.addChallenge = async (title, content, description, score_points, minimum_lvl, id_module) => {
     const query = `INSERT INTO challenges (title, content, description, score_points, minimum_lvl, id_module)
-    VALUES ($1, $2, $3)
+    VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING title, content, description, score_points, minimum_lvl, id_module
     `
     const values = [title, content, description, score_points, minimum_lvl, id_module]

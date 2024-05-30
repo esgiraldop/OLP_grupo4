@@ -1,3 +1,94 @@
+.container{
+  display: flex;
+}
+
+.card-container{
+  display: flex;
+  justify-content: space-around;
+  margin: 0 250px;
+}
+
+.card {
+  position: relative;
+  width: 30vh;
+  height: 40vh;
+  color: #fff;
+  transition: 0.5s;
+  cursor: pointer;
+  margin: 150px 20px 75px 50px;
+  padding: 0 15px 0 15px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+}
+
+.card::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #6b64f3, #ff0058);
+  border-radius: 1.2em;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #6b64f3, #ff0058);
+  filter: blur(30px);
+}
+
+.card span {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  border-radius: 1em;
+}
+
+.card span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card .content {
+  position: relative;
+  padding: 10px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  font-weight: 500;
+  font-size: .9em;
+  color: #F8EDFF;
+  text-shadow: 2px 2px 20px rgba(255,255,255,0.1);
+  h2{
+    padding: 15px 0 50px 0;
+    color: black;
+    text-shadow: 2px 2px 15px black;
+  }
+}
+
+
 #stars {
     position: relative;
     background: transparent;

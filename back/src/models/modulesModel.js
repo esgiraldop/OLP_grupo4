@@ -14,7 +14,7 @@ exports.getByLanguageId = async (id) => {
 
 exports.addModule = async (name, description, id_language, content) => {
     const query = `INSERT INTO modules (name, description, id_language, content)
-    VALUES ($1, $2, $3)
+    VALUES ($1, $2, $3, $4)
     RETURNING id, name, description, id_language, content
     `
     const values = [name, description, id_language, content]

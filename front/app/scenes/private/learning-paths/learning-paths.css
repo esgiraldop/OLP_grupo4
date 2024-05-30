@@ -9,6 +9,7 @@
     background-size: cover;
     background-position: center center;
     position: relative;
+    overflow: auto;
 }
 
 .container:before {
@@ -212,7 +213,6 @@ animation: textShine 5s ease-in-out infinite alternate;
     overflow: hidden;
     transition: transform 0.3s ease;
     animation: shadowAnimation 5s infinite ease-in-out;
-    margin-bottom: 20px;
   }
   
   @keyframes shadowAnimation {
@@ -335,3 +335,14 @@ animation: textShine 5s ease-in-out infinite alternate;
   .btn-edit-path:hover {
     box-shadow: inset 0px 0px 100px #1479EA;
   }
+
+  /* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+  .btn-new-path {
+      bottom: -200px; /* Añadido */
+  }
+  .btn-edit-path {
+      bottom: -200px; /* Añadido */
+      right: 260px;
+  }
+}

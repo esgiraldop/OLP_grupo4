@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-aside.sidebar-menu {
+.sidebar-menu {
     background: linear-gradient(0deg, rgba(56,27,119,1) 0%, rgba(83,175,222,1) 75%);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     height: 100%;
     font-family: "Poppins", sans-serif;
 }
+.sideBarMenu-visible{
+    display: none;
+}
 .logo-app-container{
     display: flex;
-    height: 100px;
+    height: 20vh;
     justify-content: center;
     align-items: center;
 }
@@ -26,22 +29,22 @@ aside.sidebar-menu {
     align-items: center;
     justify-content: start;
     padding-left: var(--spacing-2);
-    height: 80%;
-    gap: 25px;
-    padding-top: 50px;
+    height: 80vh;
+    gap: 5%;
+    padding-top: 5%;
 }
 
 .sidebar-menu > ul > li {
     list-style: none;
     width: 85%;
+    height: 12%;
     border-radius: 15px;
     transition: var(--transition);
     font-family: "Poppins", sans-serif;
 }
 
 .sidebar-menu > ul > li > button {
-    font-size: 1rem;
-    padding: 1rem;
+    font-size: 2.5vh;
     text-decoration: none;
     border: none;
     background-color: transparent;
@@ -51,19 +54,80 @@ aside.sidebar-menu {
     color: white;
     border-radius: 15px;
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .sidebar-menu > ul > li > button > img {
-    width: 30%;
-    height: 30%;
-    object-fit: cover;
-    color: bisque;
+    width: 20%;
+    height: 50%;
+    object-fit: fill;
 }
 
 .active,
 .sidebar-menu > ul > li:hover {
     background-color: rgba(3, 0, 8, 0.1);
+   
 }
 
+@media screen and  (max-width:1100px){
+
+    .sidebar-menu > ul > li > button {
+        font-size: 20px;
+    }
+    .sidebar-menu > ul > li > button > img {
+        width: 35%;
+        height: 50%;
+    }
+}
+@media screen and  (max-width:900px){
+    
+    .sidebar-menu > ul > li > button {
+        font-size: 15px;
+    }
+    .sidebar-menu > ul > li > button > img {
+        width: 40%;
+        height: 50%;
+    }
+}
+@media screen and  (max-width:760px){
+
+    .sidebar-menu {
+     background: linear-gradient(90deg, rgba(83,175,222,1) 43%, rgba(56,27,119,1) 90%);
+    }
+    .logo-app-container{
+        display: none;
+    }
+    .sidebar-menu > ul {
+        height: 100%;
+        gap: 0;
+        padding-top: 0;
+    }
+    .sidebar-menu > ul > li {
+        width: 100%;
+        height: 25%;
+        border-radius: none;
+    }
+    .sidebar-menu > ul > li > button {
+        font-size: 2vh;
+        justify-content: center;
+        gap: 5%;
+        border-radius: none;
+    }
+    .sidebar-menu > ul > li > button > img {
+        width: 7%;
+        height: 60%;
+    }
+
+}
+ @media screen and  (max-width:570px){
+
+    .sidebar-menu > ul > li > button {
+        font-size: 2vh;
+    }
+    .sidebar-menu > ul > li > button > img {
+        width: 7%;
+        height: 60%;
+    }
+}  

@@ -9,6 +9,7 @@
     background-size: cover;
     background-position: center center;
     position: relative;
+    overflow: auto;
 }
 
 .img-container{
@@ -154,9 +155,56 @@ animation: textShine 5s ease-in-out infinite alternate;
   box-shadow: inset 0px 0px 100px #1479EA;
 }
 
+.img-challenge-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.img-challenge{
+  height: 100%;
+  width: 100%;
+  background: url(https://cdn.pixabay.com/photo/2021/09/07/07/11/game-console-6603120_1280.jpg);
+  background-size: cover;
+  background-position: center center;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: filter 3s ease;
+}
+
+.img-challenge-container:hover .img-challenge {
+  filter: blur(8px);
+}
+
+.img-challenge-container .hover-text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  font-size: 18px;
+  font-weight: 700;
+  background: transparent;
+}
+
+.img-challenge-container:hover .hover-text {
+  opacity: 1;
+}
+
+/* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
-  .img-container {
-    grid-template-columns: 1fr !important;
+  .btn-new-module {
+      bottom: -480px; /* Modificado */
+      margin-bottom: 30px; /* Añadido */
+  }
+  .btn-edit-module {
+      bottom: -480px; /* Modificado */
+      margin-bottom: 30px; /* Añadido */
+      right: 350px;
   }
 }
 .hide-loader{
@@ -222,45 +270,6 @@ animation: textShine 5s ease-in-out infinite alternate;
 }
 
 
-.img-challenge-container {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
-.img-challenge{
-  height: 100%;
-  width: 100%;
-  background: url(https://cdn.pixabay.com/photo/2021/09/07/07/11/game-console-6603120_1280.jpg);
-  background-size: cover;
-  background-position: center center;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: filter 3s ease;
-}
-
-.img-challenge-container:hover .img-challenge {
-  filter: blur(8px);
-}
-
-.img-challenge-container .hover-text {
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.9s ease;
-  font-size: 18px;
-  font-weight: 700;
-  background: transparent;
-}
-
-.img-challenge-container:hover .hover-text {
-  opacity: 1;
-}
 
 .star-field {
   position: relative;

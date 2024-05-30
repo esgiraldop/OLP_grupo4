@@ -49,6 +49,9 @@ export function AboutUsPage() {
                 </div>
                 <span>Edgar Cardona</span>
                 <p class="${styles["job"]}">Back & Frontend developer, Architect</p>
+                <div><p class="${styles["card-txt"]}">Software developer student and Architect with experience in architectural design, construction, 3D modeling and use of BIM methodology. 
+                Excellent communication and empathy skills, efficient when developing assigned tasks, always willing to grow and learn with new knowledge and experiences. 
+                Avid for the new technologies of exponential growth that allow to develop projects with high standards of quality and service.</p></div>
             </div>
             <div class="${styles["card"]}">
                 <div class="${styles["card-border-top"]}"></div>

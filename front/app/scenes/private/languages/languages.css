@@ -1,14 +1,19 @@
 .container{
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(85, 92, 132, 0.342) 50%,
-      rgba(18, 18, 18, 0.274) 100%
-    ), url(https://cdn.pixabay.com/photo/2016/01/02/11/01/stars-1118077_1280.jpg) no-repeat;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(85, 92, 132, 0.342) 50%,
+    rgba(18, 18, 18, 0.274) 100%
+  ), url(https://cdn.pixabay.com/photo/2016/01/02/11/01/stars-1118077_1280.jpg) no-repeat;
+  background-size: 100% 100%; 
+  background-position: center center;
+  position: relative;
+  overflow: auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Añadido */
 }
 
 .title{
@@ -43,19 +48,30 @@ animation: textShine 5s ease-in-out infinite alternate;
 }
 
 .img-container{
+  width: 100%; 
   display: flex;
-  justify-content: center;
+  margin: 20px auto; /* Modificado */
+  justify-content: space-around; /* Añadido */
   align-items: center;
   gap: 25px;
   flex-wrap: wrap;
   padding-top: 5%;
 }
 
+.img-box {
+  width: 254px; /* Añadido */
+  height: 254px; /* Añadido */
+  display: flex; /* Añadido */
+  justify-content: center; /* Añadido */
+  align-items: center; /* Añadido */
+}
+
 .img{
-    cursor: pointer;
-    height: 254px;
-    width: auto;
-    border-radius: 20px;
+  cursor: pointer;
+  height: 100%; /* Modificado */
+  width: 100%; /* Modificado */
+  object-fit: cover; /* Añadido */
+  border-radius: 20px;
 }
 
 .hide-loader{
@@ -162,7 +178,7 @@ animation: textShine 5s ease-in-out infinite alternate;
     border-radius: 0.3em;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer;
+      cursor: pointer;
 } 
   .btn-edit-lang:hover::before, .btn-edit-lang:hover::after {
     transform: scale(0)
@@ -171,6 +187,19 @@ animation: textShine 5s ease-in-out infinite alternate;
   .btn-edit-lang:hover {
     box-shadow: inset 0px 0px 100px #1479EA;
   }
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .btn-new-lang {
+      bottom: -480px; /* Modificado */
+      margin-bottom: 30px; /* Añadido */
+  }
+  .btn-edit-lang {
+      bottom: -480px; /* Modificado */
+      margin-bottom: 30px; /* Añadido */
+      right: 350px;
+  }
+}
 
   .star-field {
     position: relative;
