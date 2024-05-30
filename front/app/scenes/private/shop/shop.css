@@ -279,6 +279,9 @@ animation: textShine 5s ease-in-out infinite alternate;
     /*border: mediumpurple 3px solid;*/
     width: 80%;
     height: 50%;
+    border-radius: 0px;
+    margin: 1rem;
+    padding: 0;
 }
 
 .card-container > .card > .card_elem.title_card{
@@ -422,7 +425,7 @@ animation: textShine 5s ease-in-out infinite alternate;
 .shop_container_elem {
     /*border: red solid 2px;*/
     overflow: scroll;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     position: relative;
 }
 
