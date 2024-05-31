@@ -56,8 +56,15 @@ Modular Content:
 
 ### Activities board
 
-jira
+Jira
+
+A screenshot of the activities board is attached next:
+
+![img.png](img.png)
+![img_1.png](img_1.png)
 
 ### Prototype
 
-excalidraw
+It was used excalidraw. A screenshot of the complete mockup is attached as a link (The png file was too large)
+
+https://excalidraw.com/#room=cd6a3b8a8726e712cbd9,vF7hSC1rs8P1Ukb3coz0GQ
