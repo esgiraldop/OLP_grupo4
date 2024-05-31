@@ -31,6 +31,7 @@ export function shopScene(){
 
         // Changing content for all accessories
         const response1 = await fetch('http://localhost:4000/api/priv/store')
+        // Esto mejora con Promise.all
         const accessories = await response1.json()
         const $accessoriesContainer = document.getElementById("accessoriesContainer")
 
