@@ -68,3 +68,21 @@ A screenshot of the activities board is attached next:
 It was used excalidraw. A screenshot of the complete mockup is attached as a link (The png file was too large)
 
 https://excalidraw.com/#room=cd6a3b8a8726e712cbd9,vF7hSC1rs8P1Ukb3coz0GQ
+
+### How to start the project?
+
+Note: The project currently runs on local host only. You need to have node.js installed and npm version 10.5.2 or newer
+
+Navigate to the folder "/back" and start the server in developer mode:
+```bash
+cd /back
+npm run dev
+```
+
+On another terminal, navigate to folder "/front" and start the application in developer mode
+```bash
+cd /front
+npm start
+```
+
+And you are all set!
